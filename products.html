@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Products - Thai Terra Gardens | Plant Exporters in Thailand</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --green-dark: #1a3a2a;
+    --green-mid: #2d6a4f;
+    --green-light: #52b788;
+    --green-pale: #d8f3dc;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --cream: #f8f5ef;
+    --white: #ffffff;
+    --text: #2c2c2c;
+    --text-muted: #6b6b6b;
+    --border: #e2ddd6;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Jost', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+  a { text-decoration: none; color: inherit; }
+
+  /* TOPBAR */
+  .topbar { background: var(--green-dark); color: rgba(255,255,255,0.75); font-size: 12.5px; padding: 7px 0; }
+  .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .topbar a { color: rgba(255,255,255,0.75); transition: color 0.2s; }
+  .topbar a:hover { color: var(--gold-light); }
+  .topbar-left, .topbar-right { display: flex; align-items: center; gap: 20px; }
+  .tbi { display: flex; align-items: center; gap: 6px; }
+
+  /* NAV */
+  nav { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; color: var(--green-dark); display: flex; align-items: center; gap: 10px; }
+  .logo-leaf { width: 34px; height: 34px; background: var(--green-mid); border-radius: 50% 5px 50% 5px; display: flex; align-items: center; justify-content: center; transform: rotate(-10deg); }
+  .logo span { color: var(--green-mid); }
+  .nav-menu { display: flex; align-items: center; gap: 4px; list-style: none; }
+  .nav-menu > li { position: relative; }
+  .nav-menu > li > a { display: flex; align-items: center; gap: 5px; padding: 10px 14px; font-size: 14px; font-weight: 500; color: var(--text); border-radius: 6px; transition: all 0.2s; white-space: nowrap; }
+  .nav-menu > li > a:hover, .nav-menu > li > a.active { color: var(--green-mid); background: var(--green-pale); }
+  .dropdown { position: absolute; top: calc(100% + 6px); left: 0; background: white; border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 12px 40px rgba(0,0,0,0.12); min-width: 200px; padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(-6px); transition: all 0.2s; z-index: 200; }
+  .nav-menu > li:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+  .dropdown li { list-style: none; }
+  .dropdown a { display: block; padding: 8px 18px; font-size: 13.5px; color: var(--text-muted); transition: all 0.15s; }
+  .dropdown a:hover { color: var(--green-mid); background: var(--green-pale); padding-left: 24px; }
+  .products-dropdown { position: absolute; top: calc(100% + 6px); left: 0; background: white; border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 12px 40px rgba(0,0,0,0.12); min-width: 250px; padding: 6px 0; opacity: 0; visibility: hidden; transform: translateY(-6px); transition: all 0.2s; z-index: 200; }
+  .nav-menu > li:hover .products-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+  .cat-item { position: relative; }
+  .cat-item > a { display: flex; align-items: center; justify-content: space-between; padding: 10px 18px; font-size: 14px; font-weight: 500; color: var(--text); transition: all 0.15s; white-space: nowrap; }
+  .cat-item > a:hover { color: var(--green-mid); background: var(--green-pale); }
+  .cat-item > a .arrow { font-size: 12px; color: var(--text-muted); }
+  .flyout { position: absolute; top: -6px; left: 100%; background: white; border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 12px 40px rgba(0,0,0,0.12); min-width: 210px; padding: 6px 0; opacity: 0; visibility: hidden; transition: all 0.2s; z-index: 201; }
+  .cat-item:hover .flyout { opacity: 1; visibility: visible; }
+  .flyout a { display: block; padding: 9px 18px; font-size: 13.5px; color: var(--text-muted); transition: all 0.15s; white-space: nowrap; }
+  .flyout a:hover { color: var(--green-mid); background: var(--green-pale); padding-left: 24px; }
+  .nav-cta { background: var(--green-mid) !important; color: white !important; padding: 9px 20px !important; border-radius: 6px !important; }
+  .nav-cta:hover { background: var(--green-dark) !important; }
+
+  /* PAGE HERO */
+  .page-hero { background: var(--green-dark); color: white; padding: 70px 24px; text-align: center; position: relative; overflow: hidden; }
+  .page-hero::before { content: ''; position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1200&q=60') center/cover; opacity: 0.18; }
+  .page-hero > * { position: relative; }
+  .page-hero .breadcrumb { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 12px; }
+  .page-hero .breadcrumb a { color: var(--gold-light); }
+  .page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 5vw, 56px); font-weight: 700; margin-bottom: 12px; }
+  .page-hero p { font-size: 16px; color: rgba(255,255,255,0.7); max-width: 560px; margin: 0 auto; line-height: 1.7; }
+
+  /* COMMON */
+  section { padding: 80px 24px; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  .section-label { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--green-mid); margin-bottom: 10px; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 700; color: var(--green-dark); line-height: 1.2; margin-bottom: 16px; }
+  .section-body { font-size: 15.5px; line-height: 1.8; color: var(--text-muted); }
+  .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--green-mid); color: white; padding: 13px 28px; border-radius: 4px; font-weight: 500; font-size: 14px; transition: all 0.2s; }
+  .btn-primary:hover { background: var(--green-dark); }
+  .btn-gold { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--green-dark); padding: 13px 28px; border-radius: 4px; font-weight: 600; font-size: 14px; transition: all 0.2s; }
+  .btn-gold:hover { background: var(--gold-light); }
+
+  /* FOOTER */
+  footer { background: #0e2218; color: rgba(255,255,255,0.65); padding: 56px 24px 0; }
+  .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: white; margin-bottom: 14px; }
+  .footer-logo span { color: var(--green-light); }
+  .footer-desc { font-size: 13.5px; line-height: 1.75; margin-bottom: 22px; }
+  .social-links { display: flex; gap: 10px; }
+  .social-link { width: 36px; height: 36px; background: rgba(255,255,255,0.07); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.65); font-size: 13px; transition: all 0.2s; border: 1px solid rgba(255,255,255,0.1); font-weight: 700; }
+  .social-link:hover { background: var(--green-mid); color: white; }
+  .footer-col h4 { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 18px; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a { font-size: 13.5px; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--green-light); }
+  .contact-item { display: flex; gap: 10px; margin-bottom: 14px; font-size: 13.5px; align-items: flex-start; }
+  .contact-item a { color: rgba(255,255,255,0.6); transition: color 0.2s; }
+  .contact-item a:hover { color: var(--green-light); }
+  .footer-bottom { max-width: 1200px; margin: 0 auto; padding: 20px 0; display: flex; justify-content: space-between; align-items: center; font-size: 12.5px; color: rgba(255,255,255,0.3); flex-wrap: wrap; gap: 10px; }
+
+  @media(max-width: 900px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .nav-menu { display: none; }
+    .mega-dropdown { grid-template-columns: repeat(2, 160px); }
+  }
+  @media(max-width: 600px) {
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span class="tbi">📍 <a href="contact.html">Bangkok, Thailand</a></span>
+      <span class="tbi">✉️ <a href="mailto:monai.suriya@gmail.com">monai.suriya@gmail.com</a></span>
+    </div>
+    <div class="topbar-right">
+      <span class="tbi">📞 <a href="tel:+66954403465">+66-954403465</a></span>
+    </div>
+  </div>
+</div>
+
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="images/index/logo.svg" alt="Thai Terra Gardens" style="height:50px;">
+    </a>
+    <ul class="nav-menu">
+      <li><a href="index.html" >Home</a></li>
+      <li>
+        <a href="about.html" >Company ▾</a>
+        <ul class="dropdown">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="mission.html">Mission &amp; Vision</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="products.html" >Products ▾</a>
+        <div class="products-dropdown">
+          <div class="cat-item">
+            <a href="products.html#cat1">🌸 Ornamental Flowering Trees <span class="arrow">›</span></a>
+            <div class="flyout">
+              <a href="plant-flame-tree.html">Flame Tree</a>
+              <a href="plant-yellow-tabebuia.html">Yellow Tabebuia</a>
+              <a href="plant-pink-trumpet.html">Pink Trumpet Tree</a>
+              <a href="plant-golden-shower.html">Golden Shower Tree</a>
+              <a href="plant-indian-cork.html">Indian Cork Tree</a>
+            </div>
+          </div>
+          <div class="cat-item">
+            <a href="products.html#cat2">🌳 Shade &amp; Architectural Trees <span class="arrow">›</span></a>
+            <div class="flyout">
+              <a href="plant-rain-tree.html">Rain Tree</a>
+              <a href="plant-neem.html">Neem Tree</a>
+              <a href="plant-sacred-fig.html">Sacred Fig</a>
+              <a href="plant-banyan.html">Banyan Tree</a>
+              <a href="plant-tropical-almond.html">Tropical Almond</a>
+            </div>
+          </div>
+          <div class="cat-item">
+            <a href="products.html#cat3">🌴 Palms &amp; Structural Plants</a>
+          </div>
+          <div class="cat-item">
+            <a href="products.html#cat4">🌿 Screening &amp; Privacy</a>
+          </div>
+          <div class="cat-item">
+            <a href="products.html#cat5">✨ Super Luxury &amp; Special</a>
+          </div>
+        </div>
+      </li>
+      <li><a href="order-process.html" >Order Process</a></li>
+      <li><a href="blog.html" >Blog</a></li>
+      <li><a href="gallery.html" >Gallery</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<style>
+  .filter-bar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
+  .filter-btn { padding: 9px 20px; border: 1.5px solid var(--border); border-radius: 30px; font-size: 14px; font-weight: 500; cursor: pointer; background: white; transition: all 0.2s; color: var(--text); }
+  .filter-btn.active, .filter-btn:hover { background: var(--green-mid); color: white; border-color: var(--green-mid); }
+  .cat-section { margin-bottom: 64px; }
+  .cat-header { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+  .cat-header h2 { font-family: 'Cormorant Garamond',serif; font-size: 28px; font-weight: 700; color: var(--green-dark); }
+  .cat-line { flex: 1; height: 1px; background: var(--border); }
+  .plant-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+  .plant-card { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: all 0.25s; background: white; }
+  .plant-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.1); transform: translateY(-4px); border-color: var(--green-light); }
+  .plant-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: opacity 0.4s ease; display: block; }
+  .plant-img-wrap { position: relative; overflow: hidden; }
+  .img-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 30px; height: 30px; background: rgba(0,0,0,0.45); color: white; border: none; border-radius: 50%; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.2s; z-index: 2; }
+  .img-arrow.prev { left: 8px; }
+  .img-arrow.next { right: 8px; }
+  .plant-img-wrap:hover .img-arrow { opacity: 1; }
+  .img-dots { display: flex; gap: 4px; justify-content: center; padding: 6px 0 2px; }
+  .img-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--border); transition: background 0.2s; }
+  .img-dot.active { background: var(--green-mid); }
+  .plant-body { padding: 16px; }
+  .plant-body h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--green-dark); }
+  .plant-body .sci { font-size: 12px; color: var(--text-muted); font-style: italic; margin-bottom: 10px; }
+  .plant-body p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+  .plant-tag { display: inline-block; background: var(--green-pale); color: var(--green-mid); font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; margin-bottom: 8px; }
+  @media(max-width:900px){ .plant-grid { grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:600px){ .plant-grid { grid-template-columns:1fr; } }
+</style>
+
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> / Products</div>
+  <h1>Our Plants</h1>
+  <p>Wide varieties of Thai ornamental plants for gardens, landscapes, and commercial projects worldwide</p>
+</div>
+
+<section>
+  <div class="container">
+    <div class="filter-bar">
+      <button class="filter-btn active" data-cat="all">All Plants</button>
+      <button class="filter-btn" data-cat="cat1">Ornamental Flowering Trees</button>
+      <button class="filter-btn" data-cat="cat2">Shade & Architectural Trees</button>
+      <button class="filter-btn" data-cat="cat3">Palms & Structural Plants</button>
+      <button class="filter-btn" data-cat="cat4">Screening & Privacy</button>
+      <button class="filter-btn" data-cat="cat5">Super Luxury & Special</button>
+    </div>
+
+    <div id="cat1" class="cat-section">
+      <div class="cat-header">
+        <h2>🌸 Category 1: Ornamental Flowering Trees</h2><div class="cat-line"></div>
+      </div>
+      <div class="plant-grid">
+        <a href="plant-flame-tree.html" class="plant-card">
+          <img class="plant-img" src="images/photo_spicies/Flame Tree (Delonix regia)/481828422_555278724233900_437610668998883755_n.jpg" alt="Flame Tree"
+            data-images='["images/photo_spicies/Flame Tree (Delonix regia)/481828422_555278724233900_437610668998883755_n.jpg","images/photo_spicies/Flame Tree (Delonix regia)/507575168_4097128003833863_3377885652573953959_n.jpg","images/photo_spicies/Flame Tree (Delonix regia)/507726031_4097127983833865_1226635482713222406_n.jpg","images/photo_spicies/Flame Tree (Delonix regia)/508515295_4097127977167199_3147631626126531195_n.jpg","images/photo_spicies/Flame Tree (Delonix regia)/509093747_4097128053833858_7141444553626484514_n.jpg","images/photo_spicies/Flame Tree (Delonix regia)/615407267_4255032244754476_8576292507408464975_n.jpg","images/photo_spicies/Flame Tree (Delonix regia)/640978985_3814727405489198_1055088795197398123_n.jpg","images/photo_spicies/Flame Tree (Delonix regia)/641617885_3814727472155858_8685861269693529400_n.jpg","images/photo_spicies/Flame Tree (Delonix regia)/651091824_945977814790748_9119798321547285752_n.jpg","images/photo_spicies/Flame Tree (Delonix regia)/651229322_945977884790741_7858912752928366786_n.jpg","images/photo_spicies/Flame Tree (Delonix regia)/651379866_945977758124087_3356846686668345439_n.jpg","images/photo_spicies/Flame Tree (Delonix regia)/652648220_945977698124093_5459163289676781703_n.jpg","images/photo_spicies/Flame Tree (Delonix regia)/653846876_4290828061183574_1426530313131772679_n.jpg","images/photo_spicies/Flame Tree (Delonix regia)/655436081_4290828081183572_427750481345572270_n.jpg","images/photo_spicies/Flame Tree (Delonix regia)/655454469_4290828147850232_3793332042930250210_n.jpg"]'>
+          <div class="plant-body"><span class="plant-tag">Flowering</span><h3>Flame Tree</h3><p class="sci">Delonix regia</p><p>Known as Royal Poinciana. Stunning scarlet flowers and wide spreading canopy.</p></div>
+        </a>
+        <a href="plant-yellow-tabebuia.html" class="plant-card">
+          <img class="plant-img" src="images/photo_spicies/Yellow Lagerstroemia (Lagerstroemia spp.)/530901184_777199948025852_1507814687389702258_n.jpg" alt="Yellow Tabebuia"
+            data-images='["images/photo_spicies/Yellow Lagerstroemia (Lagerstroemia spp.)/530901184_777199948025852_1507814687389702258_n.jpg","images/photo_spicies/Yellow Lagerstroemia (Lagerstroemia spp.)/548969825_807869821625531_8388330895076752915_n.jpg","images/photo_spicies/Yellow Lagerstroemia (Lagerstroemia spp.)/550230943_807869831625530_8987658105706785124_n.jpg","images/photo_spicies/Yellow Lagerstroemia (Lagerstroemia spp.)/550383519_807868351625678_5357669190381440828_n.jpg","images/photo_spicies/Yellow Lagerstroemia (Lagerstroemia spp.)/626944935_1987564752175231_7685145073940493094_n.jpg","images/photo_spicies/Yellow Lagerstroemia (Lagerstroemia spp.)/627109460_1987564668841906_2454856518151987361_n.jpg","images/photo_spicies/Yellow Lagerstroemia (Lagerstroemia spp.)/640309424_2224314571435443_8531670822594237768_n.jpg","images/photo_spicies/Yellow Lagerstroemia (Lagerstroemia spp.)/641450969_2224314478102119_6195929505092748072_n.jpg","images/photo_spicies/Yellow Lagerstroemia (Lagerstroemia spp.)/642201155_2072257450222888_3379589502073147859_n.jpg","images/photo_spicies/Yellow Lagerstroemia (Lagerstroemia spp.)/649387084_1490497299426935_5010542622492250329_n.jpg","images/photo_spicies/Yellow Lagerstroemia (Lagerstroemia spp.)/651410172_1444096323869552_3382423779682627088_n.jpg","images/photo_spicies/Yellow Lagerstroemia (Lagerstroemia spp.)/651707973_1444096367202881_205107820012811929_n.jpg","images/photo_spicies/Yellow Lagerstroemia (Lagerstroemia spp.)/652966141_1444096280536223_7179021372288613741_n.jpg"]'>
+          <div class="plant-body"><span class="plant-tag">Flowering</span><h3>Yellow Tabebuia</h3><p class="sci">Handroanthus aureus</p><p>Elegant flowering tree with vibrant yellow seasonal blooms.</p></div>
+        </a>
+        <a href="plant-pink-trumpet.html" class="plant-card">
+          <img class="plant-img" src="images/photo_spicies/Pink Trumpet Tree (Tabebuia rosea)/482003420_1506126196974150_4205809968017726152_n.jpg" alt="Pink Trumpet Tree"
+            data-images='["images/photo_spicies/Pink Trumpet Tree (Tabebuia rosea)/482003420_1506126196974150_4205809968017726152_n.jpg","images/photo_spicies/Pink Trumpet Tree (Tabebuia rosea)/482026789_1506125990307504_8929679707499218561_n.jpg","images/photo_spicies/Pink Trumpet Tree (Tabebuia rosea)/483796097_2078091526026620_7434891872638393587_n.jpg","images/photo_spicies/Pink Trumpet Tree (Tabebuia rosea)/483885852_2078091506026622_5419999954027349419_n.jpg","images/photo_spicies/Pink Trumpet Tree (Tabebuia rosea)/483929160_2078091502693289_3277895690282021192_n.jpg","images/photo_spicies/Pink Trumpet Tree (Tabebuia rosea)/484547696_675036018388087_8692262142013818607_n.jpg","images/photo_spicies/Pink Trumpet Tree (Tabebuia rosea)/484549411_675035868388102_6534917887993627611_n.jpg","images/photo_spicies/Pink Trumpet Tree (Tabebuia rosea)/648454357_2542687242889107_1596921975337760592_n.jpg"]'>
+          <div class="plant-body"><span class="plant-tag">Flowering</span><h3>Pink Trumpet Tree</h3><p class="sci">Tabebuia rosea</p><p>Spectacular pink blossoms, creating a cherry blossom effect in tropical regions.</p></div>
+        </a>
+        <a href="plant-golden-shower.html" class="plant-card">
+          <img class="plant-img" src="images/photo_spicies/Golden Rain Tree (Cassia fistula)/644833757_3897093320593132_4997055673850066656_n.jpg" alt="Golden Shower Tree"
+            data-images='["images/photo_spicies/Golden Rain Tree (Cassia fistula)/644833757_3897093320593132_4997055673850066656_n.jpg","images/photo_spicies/Golden Rain Tree (Cassia fistula)/645699149_3897093283926469_676170851626181206_n.jpg","images/photo_spicies/Golden Rain Tree (Cassia fistula)/651050747_2183667849100970_5317513315107220655_n.jpg","images/photo_spicies/Golden Rain Tree (Cassia fistula)/651172783_2183667769100978_6966417349643278951_n.jpg","images/photo_spicies/Golden Rain Tree (Cassia fistula)/652457726_2183667909100964_9126218979889437637_n.jpg","images/photo_spicies/Golden Rain Tree (Cassia fistula)/653933434_2188510181950070_5426218702937232043_n.jpg","images/photo_spicies/Golden Rain Tree (Cassia fistula)/653979138_2188510241950064_437268423108174597_n.jpg","images/photo_spicies/Golden Rain Tree (Cassia fistula)/654535337_2188510105283411_4528205946304663300_n.jpg","images/photo_spicies/Golden Rain Tree (Cassia fistula)/654742160_2188510311950057_8741696350649578551_n.jpg"]'>
+          <div class="plant-body"><span class="plant-tag">Flowering</span><h3>Golden Shower Tree</h3><p class="sci">Cassia fistula</p><p>Cascading golden-yellow flowers. Thailand's national tree.</p></div>
+        </a>
+        <a href="plant-indian-cork.html" class="plant-card">
+          <img class="plant-img" src="images/photo_spicies/Indian Cork Tree (Millingtonia hortensis)/127517808_3763539810369587_2779422141269222196_n.jpg" alt="Indian Cork Tree"
+            data-images='["images/photo_spicies/Indian Cork Tree (Millingtonia hortensis)/127517808_3763539810369587_2779422141269222196_n.jpg","images/photo_spicies/Indian Cork Tree (Millingtonia hortensis)/128866459_3763539703702931_1408405618380713267_n.jpg","images/photo_spicies/Indian Cork Tree (Millingtonia hortensis)/1345258896.jpg","images/photo_spicies/Indian Cork Tree (Millingtonia hortensis)/484530309_1766617847236377_110219935628528960_n.jpg","images/photo_spicies/Indian Cork Tree (Millingtonia hortensis)/497212309_2707103612812688_9094038554093184437_n.jpg","images/photo_spicies/Indian Cork Tree (Millingtonia hortensis)/497302716_2707103816146001_5323099315934462053_n.jpg","images/photo_spicies/Indian Cork Tree (Millingtonia hortensis)/644109576_1468826768034353_2427513130130034069_n.jpg","images/photo_spicies/Indian Cork Tree (Millingtonia hortensis)/646885535_1438862241059627_5632704107281287839_n.jpg","images/photo_spicies/Indian Cork Tree (Millingtonia hortensis)/646906628_1438862684392916_1330439786064798650_n.jpg","images/photo_spicies/Indian Cork Tree (Millingtonia hortensis)/648232256_1438862414392943_4959376239761131345_n.jpg","images/photo_spicies/Indian Cork Tree (Millingtonia hortensis)/648463550_1438862551059596_4821597147050554113_n.jpg","images/photo_spicies/Indian Cork Tree (Millingtonia hortensis)/65910772_1086523521537380_6819937840143532032_n.jpg","images/photo_spicies/Indian Cork Tree (Millingtonia hortensis)/66478587_1086523641537368_2660030729978642432_n.jpg"]'>
+          <div class="plant-body"><span class="plant-tag">Flowering</span><h3>Indian Cork Tree</h3><p class="sci">Millingtonia hortensis</p><p>Highly fragrant white flowers, especially noticeable at night.</p></div>
+        </a>
+      </div>
+    </div>
+
+    <div id="cat2" class="cat-section">
+      <div class="cat-header">
+        <h2>🌳 Category 2: Shade & Architectural Trees</h2><div class="cat-line"></div>
+      </div>
+      <div class="plant-grid">
+        <a href="plant-rain-tree.html" class="plant-card">
+          <img class="plant-img" src="images/photo_spicies/Samanea saman (Rain Tree)/491169662_662587219858413_585902900736249395_n.jpg" alt="Rain Tree"
+            data-images='["images/photo_spicies/Samanea saman (Rain Tree)/491169662_662587219858413_585902900736249395_n.jpg","images/photo_spicies/Samanea saman (Rain Tree)/491458736_662585453191923_9064893118391529826_n.jpg","images/photo_spicies/Samanea saman (Rain Tree)/608165330_3734419970200360_5101394918955277137_n.jpg","images/photo_spicies/Samanea saman (Rain Tree)/608899843_3734420030200354_5408994695937587235_n.jpg","images/photo_spicies/Samanea saman (Rain Tree)/611306959_3734420000200357_6821623379648794116_n.jpg","images/photo_spicies/Samanea saman (Rain Tree)/640390841_2911019869106776_1149874819340200914_n.jpg","images/photo_spicies/Samanea saman (Rain Tree)/640875018_2911019919106771_445796665694904959_n.jpg","images/photo_spicies/Samanea saman (Rain Tree)/641459064_2911019912440105_6145003696801022662_n.jpg","images/photo_spicies/Samanea saman (Rain Tree)/646337765_4278003209132726_1321929460554847138_n.jpg","images/photo_spicies/Samanea saman (Rain Tree)/646426073_2920589338149829_7239156362462862637_n.jpg","images/photo_spicies/Samanea saman (Rain Tree)/646448125_2920589371483159_7472554448222426949_n.jpg","images/photo_spicies/Samanea saman (Rain Tree)/647187218_2920589254816504_7859717592874234112_n.jpg","images/photo_spicies/Samanea saman (Rain Tree)/650853229_947009521189188_8983758810620831758_n.jpg","images/photo_spicies/Samanea saman (Rain Tree)/650917227_947009724522501_2829764432314743407_n.jpg","images/photo_spicies/Samanea saman (Rain Tree)/651153408_947009671189173_7953320939283677850_n.jpg"]'>
+          <div class="plant-body"><span class="plant-tag">Shade</span><h3>Rain Tree</h3><p class="sci">Samanea saman</p><p>Expansive umbrella-shaped canopy, providing exceptional shade in large landscapes.</p></div>
+        </a>
+        <a href="plant-neem.html" class="plant-card">
+          <img class="plant-img" src="images/photo_spicies/Neem Tree (Azadirachta indica)/539121354_24552624167708052_8188614692606417298_n.jpg" alt="Neem Tree"
+            data-images='["images/photo_spicies/Neem Tree (Azadirachta indica)/539121354_24552624167708052_8188614692606417298_n.jpg","images/photo_spicies/Neem Tree (Azadirachta indica)/651091824_945977814790748_9119798321547285752_n.jpg"]'>
+          <div class="plant-body"><span class="plant-tag">Shade</span><h3>Neem Tree</h3><p class="sci">Azadirachta indica</p><p>Resilient and fast-growing, valued for medicinal properties and dense shade.</p></div>
+        </a>
+        <a href="plant-sacred-fig.html" class="plant-card">
+          <img class="plant-img" src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=400&q=80" alt="Sacred Fig">
+          <div class="plant-body"><span class="plant-tag">Shade</span><h3>Sacred Fig</h3><p class="sci">Ficus religiosa</p><p>Culturally significant tree with heart-shaped foliage for heritage landscapes.</p></div>
+        </a>
+        <a href="plant-banyan.html" class="plant-card">
+          <img class="plant-img" src="images/photo_spicies/Banyan Tree (Ficus benghalensis)/501428880_1412454000072230_3075358720567216508_n.jpg" alt="Banyan Tree"
+            data-images='["images/photo_spicies/Banyan Tree (Ficus benghalensis)/501428880_1412454000072230_3075358720567216508_n.jpg","images/photo_spicies/Banyan Tree (Ficus benghalensis)/501466699_1412454130072217_1952621753436490458_n.jpg","images/photo_spicies/Banyan Tree (Ficus benghalensis)/501786325_1412454243405539_1230972743945295232_n.jpg","images/photo_spicies/Banyan Tree (Ficus benghalensis)/502663526_1412454046738892_2566940119061711212_n.jpg","images/photo_spicies/Banyan Tree (Ficus benghalensis)/623215064_4325264311086172_3802025203169882879_n.jpg","images/photo_spicies/Banyan Tree (Ficus benghalensis)/646375216_2176000626534359_2715966873762710423_n.jpg","images/photo_spicies/Banyan Tree (Ficus benghalensis)/647307268_2176000576534364_7874398825916873098_n.jpg"]'>
+          <div class="plant-body"><span class="plant-tag">Shade</span><h3>Banyan Tree</h3><p class="sci">Ficus microcarpa</p><p>Powerful landscape tree with aerial roots and strong architectural presence.</p></div>
+        </a>
+        <a href="plant-tropical-almond.html" class="plant-card">
+          <img class="plant-img" src="images/photo_spicies/Tropical Almond (Terminalia ivorensis)/483659514_1484682152918280_6771593060673312121_n.jpg" alt="Tropical Almond"
+            data-images='["images/photo_spicies/Tropical Almond (Terminalia ivorensis)/483659514_1484682152918280_6771593060673312121_n.jpg","images/photo_spicies/Tropical Almond (Terminalia ivorensis)/484791897_1812720809550644_201607671393658102_n.jpg","images/photo_spicies/Tropical Almond (Terminalia ivorensis)/487191797_1872821083486512_1752963598057362718_n.jpg","images/photo_spicies/Tropical Almond (Terminalia ivorensis)/487360498_1872821066819847_7952340155197985651_n.jpg","images/photo_spicies/Tropical Almond (Terminalia ivorensis)/487967394_1069851781829559_2923230426176153475_n.jpg","images/photo_spicies/Tropical Almond (Terminalia ivorensis)/488601240_1069851655162905_1999164821389853338_n.jpg","images/photo_spicies/Tropical Almond (Terminalia ivorensis)/506112509_4151945671705053_2320667926724216543_n.jpg"]'>
+          <div class="plant-body"><span class="plant-tag">Shade</span><h3>Tropical Almond</h3><p class="sci">Terminalia ivorensis</p><p>Structured tree with layered branching, ideal for formal and roadside landscapes.</p></div>
+        </a>
+      </div>
+    </div>
+
+    <div id="cat3" class="cat-section">
+      <div class="cat-header">
+        <h2>🌴 Category 3: Palms & Structural Plants</h2><div class="cat-line"></div>
+      </div>
+      <p style="color:var(--text-muted);font-size:15px;padding:20px 0;">Coming soon — contact us directly for availability.</p>
+    </div>
+
+    <div id="cat4" class="cat-section">
+      <div class="cat-header">
+        <h2>🌿 Category 4: Screening & Privacy (Hedges)</h2><div class="cat-line"></div>
+      </div>
+      <p style="color:var(--text-muted);font-size:15px;padding:20px 0;">Coming soon — contact us directly for availability.</p>
+    </div>
+
+    <div id="cat5" class="cat-section">
+      <div class="cat-header">
+        <h2>✨ Category 5: Super Luxury & Special Consideration</h2><div class="cat-line"></div>
+      </div>
+      <p style="color:var(--text-muted);font-size:15px;padding:20px 0;">Coming soon — contact us directly for availability.</p>
+    </div>
+
+  </div>
+</section>
+
+<section style="background:var(--green-dark);color:white;padding:60px 24px;text-align:center">
+  <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,4vw,40px);font-weight:700;margin-bottom:12px">Interested in Any of These Plants?</h2>
+  <p style="color:rgba(255,255,255,0.65);max-width:500px;margin:0 auto 28px;line-height:1.7">Contact us with your plant list and we'll provide a full quotation with availability, pricing, and delivery timeline.</p>
+  <a href="order-process.html" class="btn-gold" style="margin-right:14px">How to Order →</a>
+  <a href="contact.html" class="btn-primary" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3)">Contact Us</a>
+</section>
+
+<script>
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    this.classList.add('active');
+    const cat = this.dataset.cat;
+    document.querySelectorAll('.cat-section').forEach(sec=>{
+      sec.style.display = (cat==='all' || sec.id===cat) ? 'block' : 'none';
+    });
+  });
+});
+
+// Arrow-browse images on plant cards
+document.querySelectorAll('.plant-img[data-images]').forEach(img => {
+  const images = JSON.parse(img.dataset.images);
+  if (images.length < 2) return;
+  let idx = 0;
+
+  // Wrap img in a div
+  const wrap = document.createElement('div');
+  wrap.className = 'plant-img-wrap';
+  img.parentNode.insertBefore(wrap, img);
+  wrap.appendChild(img);
+
+  // Prev / Next buttons
+  const prev = document.createElement('button');
+  prev.className = 'img-arrow prev';
+  prev.innerHTML = '&#8249;';
+  const next = document.createElement('button');
+  next.className = 'img-arrow next';
+  next.innerHTML = '&#8250;';
+  wrap.appendChild(prev);
+  wrap.appendChild(next);
+
+  // Dots indicator
+  const dotsEl = document.createElement('div');
+  dotsEl.className = 'img-dots';
+  images.forEach((_, i) => {
+    const d = document.createElement('span');
+    d.className = 'img-dot' + (i === 0 ? ' active' : '');
+    dotsEl.appendChild(d);
+  });
+  wrap.after(dotsEl);
+
+  function goTo(newIdx) {
+    img.style.opacity = '0';
+    setTimeout(() => {
+      idx = (newIdx + images.length) % images.length;
+      img.src = images[idx];
+      img.style.opacity = '1';
+      dotsEl.querySelectorAll('.img-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+    }, 400);
+  }
+
+  prev.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); goTo(idx - 1); });
+  next.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); goTo(idx + 1); });
+});
+</script>
+
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Thai Terra Gardens</div>
+      <p class="footer-desc">A Thai company for exporting plants with more than 11 years of experience. Established nurseries and local partnerships make us the best plant exporter in Thailand.</p>
+      <div class="social-links">
+        <a href="https://api.whatsapp.com/send/?phone=66954403465" class="social-link" target="_blank">wa</a>
+        <a href="https://www.linkedin.com/in/monai-suriya/" class="social-link" target="_blank">in</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="mission.html">Mission &amp; Vision</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="products.html#cat1">Ornamental Flowering Trees</a></li>
+        <li><a href="products.html#cat4">Screening &amp; Privacy</a></li>
+        <li><a href="products.html#cat2">Shade &amp; Architectural Trees</a></li>
+        <li><a href="products.html#cat3">Palms &amp; Structural Plants</a></li>
+        <li><a href="products.html#cat5">Super Luxury &amp; Special</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="contact-item">📞 <a href="tel:+66954403465">+66-954403465</a></div>
+      <div class="contact-item">✉️ <a href="mailto:monai.suriya@gmail.com">monai.suriya@gmail.com</a></div>
+      <div class="contact-item">📍 Kaeng Khoi District, Saraburi 18110, Thailand</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 Thai Terra Gardens Co., Ltd. All rights reserved.</span>
+    <span>Plant Exporters in Thailand</span>
+  </div>
+</footer>
+
+</body>
+</html>

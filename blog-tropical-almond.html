@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tropical Almond — The Perfect Coastal Shade Tree | Thai Terra Gardens Blog</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --green-dark: #1a3a2a; --green-mid: #2d6a4f; --green-light: #52b788;
+    --green-pale: #d8f3dc; --gold: #c9a84c; --gold-light: #e8c97a;
+    --cream: #f8f5ef; --white: #ffffff; --text: #2c2c2c;
+    --text-muted: #6b6b6b; --border: #e2ddd6;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Jost', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+  a { text-decoration: none; color: inherit; }
+  .topbar { background: var(--green-dark); color: rgba(255,255,255,0.75); font-size: 12.5px; padding: 7px 0; }
+  .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+  .topbar a { color: rgba(255,255,255,0.75); transition: color 0.2s; }
+  .topbar a:hover { color: var(--gold-light); }
+  .topbar-left, .topbar-right { display: flex; align-items: center; gap: 20px; }
+  .tbi { display: flex; align-items: center; gap: 6px; }
+  nav { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; color: var(--green-dark); }
+  .nav-menu { display: flex; align-items: center; gap: 4px; list-style: none; }
+  .nav-menu > li > a { display: flex; align-items: center; gap: 5px; padding: 10px 14px; font-size: 14px; font-weight: 500; color: var(--text); border-radius: 6px; transition: all 0.2s; }
+  .nav-menu > li > a:hover, .nav-menu > li > a.active { color: var(--green-mid); background: var(--green-pale); }
+  .nav-cta { background: var(--green-mid) !important; color: white !important; padding: 9px 20px !important; border-radius: 6px !important; }
+  .nav-cta:hover { background: var(--green-dark) !important; }
+  .post-hero { position: relative; height: 480px; overflow: hidden; }
+  .post-hero img { width: 100%; height: 100%; object-fit: cover; }
+  .post-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.6) 100%); display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 48px 24px; text-align: center; color: white; }
+  .post-hero-overlay .breadcrumb { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 14px; }
+  .post-hero-overlay .breadcrumb a { color: var(--gold-light); }
+  .post-hero-overlay h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 5vw, 52px); font-weight: 700; line-height: 1.2; max-width: 800px; }
+  .post-hero-overlay .post-meta { margin-top: 14px; font-size: 13.5px; color: rgba(255,255,255,0.65); display: flex; gap: 20px; }
+  .post-wrap { max-width: 800px; margin: 0 auto; padding: 64px 24px 80px; }
+  .post-lead { font-size: 18px; line-height: 1.8; color: var(--text-muted); margin-bottom: 40px; border-left: 4px solid var(--green-light); padding-left: 20px; }
+  .post-wrap h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: var(--green-dark); margin: 40px 0 14px; }
+  .post-wrap p { font-size: 15.5px; line-height: 1.85; color: var(--text-muted); margin-bottom: 18px; }
+  .post-wrap ul { padding-left: 22px; margin-bottom: 18px; }
+  .post-wrap ul li { font-size: 15.5px; line-height: 1.85; color: var(--text-muted); margin-bottom: 8px; }
+  .post-img { width: 100%; border-radius: 12px; margin: 32px 0; object-fit: cover; max-height: 420px; }
+  .fact-box { background: var(--green-pale); border-radius: 12px; padding: 24px 28px; margin: 32px 0; }
+  .fact-box h4 { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--green-dark); margin-bottom: 14px; }
+  .fact-row { display: flex; gap: 12px; margin-bottom: 8px; font-size: 14.5px; }
+  .fact-label { font-weight: 600; color: var(--green-mid); min-width: 140px; }
+  .fact-val { color: var(--text); }
+  .cta-box { background: var(--green-dark); color: white; border-radius: 14px; padding: 36px; text-align: center; margin-top: 56px; }
+  .cta-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; margin-bottom: 12px; }
+  .cta-box p { font-size: 15px; color: rgba(255,255,255,0.75); margin-bottom: 24px; }
+  .btn-gold { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--green-dark); padding: 13px 28px; border-radius: 4px; font-weight: 600; font-size: 14px; transition: all 0.2s; }
+  .btn-gold:hover { background: var(--gold-light); }
+  .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--green-mid); font-size: 14px; font-weight: 500; margin-bottom: 40px; }
+  .back-link:hover { color: var(--green-dark); }
+  footer { background: #0e2218; color: rgba(255,255,255,0.65); padding: 56px 24px 0; }
+  .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: white; margin-bottom: 14px; }
+  .footer-logo span { color: var(--green-light); }
+  .footer-desc { font-size: 13.5px; line-height: 1.75; margin-bottom: 22px; }
+  .social-links { display: flex; gap: 10px; }
+  .social-link { width: 36px; height: 36px; background: rgba(255,255,255,0.07); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.65); font-size: 13px; transition: all 0.2s; border: 1px solid rgba(255,255,255,0.1); font-weight: 700; }
+  .social-link:hover { background: var(--green-mid); color: white; }
+  .footer-col h4 { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 18px; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a { font-size: 13.5px; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--green-light); }
+  .contact-item { display: flex; gap: 10px; margin-bottom: 14px; font-size: 13.5px; }
+  .contact-item a { color: rgba(255,255,255,0.6); transition: color 0.2s; }
+  .footer-bottom { max-width: 1200px; margin: 0 auto; padding: 20px 0; display: flex; justify-content: space-between; font-size: 12.5px; color: rgba(255,255,255,0.3); flex-wrap: wrap; gap: 10px; }
+  @media(max-width:900px){ .footer-grid { grid-template-columns: 1fr 1fr; } .nav-menu { display: none; } }
+  @media(max-width:600px){ .footer-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span class="tbi">&#128205; <a href="contact.html">Bangkok, Thailand</a></span>
+      <span class="tbi">&#9993; <a href="mailto:monai.suriya@gmail.com">monai.suriya@gmail.com</a></span>
+    </div>
+    <div class="topbar-right">
+      <span class="tbi">&#128222; <a href="tel:+66954403465">+66-954403465</a></span>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="images/index/logo.svg" alt="Thai Terra Gardens" style="height:50px;">
+    </a>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Company</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="order-process.html">Order Process</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <img src="images/blog/blog-tropical-almond.jpg" alt="Tropical Almond Tree">
+  <div class="post-hero-overlay">
+    <div class="breadcrumb"><a href="index.html">Home</a> / <a href="blog.html">Blog</a> / Tropical Almond</div>
+    <h1>Tropical Almond — The Perfect Coastal Shade Tree</h1>
+    <div class="post-meta"><span>Landscaping</span><span>November 2025</span><span>By Thai Terra Gardens</span></div>
+  </div>
+</div>
+
+<div class="post-wrap">
+  <a href="blog.html" class="back-link">&#8592; Back to Blog</a>
+
+  <p class="post-lead">
+    Terminalia catappa — the Tropical Almond, or Sea Almond — is one of the most practical and visually striking trees for coastal and tropical landscape projects. With its distinctive horizontal branching, broad shade, remarkable resilience, and spectacular seasonal colour change, it earns its place in any serious landscape palette.
+  </p>
+
+  <div class="fact-box">
+    <h4>Quick Facts</h4>
+    <div class="fact-row"><span class="fact-label">Botanical Name</span><span class="fact-val">Terminalia catappa</span></div>
+    <div class="fact-row"><span class="fact-label">Common Name</span><span class="fact-val">Tropical Almond, Sea Almond, Indian Almond, Huak Kwang (Thai)</span></div>
+    <div class="fact-row"><span class="fact-label">Family</span><span class="fact-val">Combretaceae</span></div>
+    <div class="fact-row"><span class="fact-label">Origin</span><span class="fact-val">Indo-Pacific region; widely distributed in tropical coastal zones</span></div>
+    <div class="fact-row"><span class="fact-label">Height</span><span class="fact-val">15 – 25 metres at maturity</span></div>
+    <div class="fact-row"><span class="fact-label">Canopy Width</span><span class="fact-val">Up to 20 metres — outstanding shade tree</span></div>
+    <div class="fact-row"><span class="fact-label">Special Feature</span><span class="fact-val">Tiered horizontal branching; leaves turn red/yellow before dropping</span></div>
+  </div>
+
+  <h2>Architecture in Nature</h2>
+  <p>
+    The Tropical Almond is immediately recognisable by its growth form. Unlike most trees that branch in rounded or irregular patterns, Terminalia catappa grows in clearly defined horizontal tiers — each successive layer of branches spreading outward from the trunk in a geometric, pagoda-like structure. This highly architectural form gives it an elegant, almost designed appearance even without any human intervention.
+  </p>
+  <p>
+    This tiered branching makes the Tropical Almond particularly appealing to landscape architects who want strong structural interest in a tree. The form reads beautifully from a distance, creates layered shade beneath, and fits naturally into formal or contemporary garden designs as well as naturalistic coastal settings.
+  </p>
+
+  <img src="images/blog/blog-tropical-almond-2.jpg" alt="Tropical Almond leaves" class="post-img">
+
+  <h2>Spectacular Seasonal Colour</h2>
+  <p>
+    One of the most surprising features of the Tropical Almond is its seasonal colour change — unusual for a tropical species. Twice a year, before each leaf drop, the large, glossy leaves turn vivid shades of yellow, orange, and deep crimson. For a brief period, the tree looks more like a temperate autumn landscape than a tropical one.
+  </p>
+  <p>
+    This dramatic colour display, combined with the tree's normally lush green appearance, gives it genuine year-round visual interest. For resort designers and landscape architects looking to create seasonal moments in tropical projects, the Tropical Almond is an excellent choice.
+  </p>
+
+  <h2>Salt Tolerance and Coastal Resilience</h2>
+  <p>
+    Where the Tropical Almond truly excels is in coastal and marine environments. It is one of the most salt-tolerant shade trees available, thriving in seaside conditions where most other large trees would struggle or fail. Its root system is also resistant to strong coastal winds, making it a reliable long-term investment in exposed locations.
+  </p>
+  <p>
+    This combination of salt tolerance, wind resistance, and large spreading canopy makes it the go-to species for:
+  </p>
+  <ul>
+    <li>Beachfront resort and hotel landscaping</li>
+    <li>Coastal promenades and boardwalks</li>
+    <li>Seaside parks and public beaches</li>
+    <li>Marina and harbour-side developments</li>
+    <li>Any tropical project within 500m of the sea</li>
+  </ul>
+
+  <h2>Growing Conditions</h2>
+  <ul>
+    <li><strong>Sunlight:</strong> Full sun; thrives in open, exposed positions</li>
+    <li><strong>Soil:</strong> Sandy coastal soil to loam; excellent tolerance of poor soils</li>
+    <li><strong>Salt:</strong> High salt and spray tolerance; one of the best for coastal use</li>
+    <li><strong>Water:</strong> Moderate; drought-tolerant once established</li>
+    <li><strong>Wind:</strong> Good wind resistance; suitable for exposed sites</li>
+    <li><strong>Growth Rate:</strong> Fast; 1–2m per year in good conditions</li>
+    <li><strong>Maintenance:</strong> Low; naturally sheds lower branches as it matures</li>
+  </ul>
+
+  <h2>Ecological Value</h2>
+  <p>
+    Beyond its landscape value, the Tropical Almond is ecologically important. Its fruits are consumed by bats, birds, and marine life — fallen fruits in coastal areas are eaten by fish and crabs. The leaves, which contain tannins and flavonoids, are used in traditional Asian aquaculture to condition water for fish breeding. In Thailand and across Southeast Asia, the Tropical Almond is a well-loved community tree, planted along roads, in school grounds, and around temples.
+  </p>
+
+  <h2>Export from Thailand</h2>
+  <p>
+    Thailand has extensive natural populations and well-established nursery production of Terminalia catappa. Thai Terra Gardens can supply plants at various stages of development — from young bare-root seedlings for mass planting schemes, to semi-mature specimen trees for immediate landscape impact. All specimens are certified to relevant phytosanitary standards for international export.
+  </p>
+
+  <div class="cta-box">
+    <h3>Plan Your Coastal Landscape with Tropical Almond</h3>
+    <p>Our team can advise on specimen availability, sizing, and logistics for your coastal or beachfront project.</p>
+    <a href="contact.html" class="btn-gold">Get in Touch &#8594;</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Thai Terra <span>Gardens</span></div>
+      <p class="footer-desc">A Thai company for exporting plants with more than 11 years of experience. Established nurseries and local partnerships make us the best plant exporter in Thailand.</p>
+      <div class="social-links">
+        <a href="https://api.whatsapp.com/send/?phone=66954403465" class="social-link" target="_blank">wa</a>
+        <a href="https://www.linkedin.com/in/monai-suriya/" class="social-link" target="_blank">in</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="mission.html">Mission &amp; Vision</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="products.html#cat1">Ornamental Flowering Trees</a></li>
+        <li><a href="products.html#cat2">Shade &amp; Architectural Trees</a></li>
+        <li><a href="products.html#cat3">Palms &amp; Structural Plants</a></li>
+        <li><a href="products.html#cat5">Super Luxury &amp; Special</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="contact-item">&#128222; <a href="tel:+66954403465">+66-954403465</a></div>
+      <div class="contact-item">&#9993; <a href="mailto:monai.suriya@gmail.com">monai.suriya@gmail.com</a></div>
+      <div class="contact-item">&#128205; Kaeng Khoi District, Saraburi 18110, Thailand</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&#169; 2024 Thai Terra Gardens Co., Ltd. All rights reserved.</span>
+    <span>Plant Exporters in Thailand</span>
+  </div>
+</footer>
+
+</body>
+</html>

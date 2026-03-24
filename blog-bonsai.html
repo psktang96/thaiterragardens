@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thai Bonsai — Living Art with Luxury Market Value | Thai Terra Gardens Blog</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --green-dark: #1a3a2a; --green-mid: #2d6a4f; --green-light: #52b788;
+    --green-pale: #d8f3dc; --gold: #c9a84c; --gold-light: #e8c97a;
+    --cream: #f8f5ef; --white: #ffffff; --text: #2c2c2c;
+    --text-muted: #6b6b6b; --border: #e2ddd6;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Jost', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+  a { text-decoration: none; color: inherit; }
+  .topbar { background: var(--green-dark); color: rgba(255,255,255,0.75); font-size: 12.5px; padding: 7px 0; }
+  .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+  .topbar a { color: rgba(255,255,255,0.75); transition: color 0.2s; }
+  .topbar a:hover { color: var(--gold-light); }
+  .topbar-left, .topbar-right { display: flex; align-items: center; gap: 20px; }
+  .tbi { display: flex; align-items: center; gap: 6px; }
+  nav { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; color: var(--green-dark); }
+  .nav-menu { display: flex; align-items: center; gap: 4px; list-style: none; }
+  .nav-menu > li > a { display: flex; align-items: center; gap: 5px; padding: 10px 14px; font-size: 14px; font-weight: 500; color: var(--text); border-radius: 6px; transition: all 0.2s; }
+  .nav-menu > li > a:hover, .nav-menu > li > a.active { color: var(--green-mid); background: var(--green-pale); }
+  .nav-cta { background: var(--green-mid) !important; color: white !important; padding: 9px 20px !important; border-radius: 6px !important; }
+  .nav-cta:hover { background: var(--green-dark) !important; }
+  .post-hero { position: relative; height: 480px; overflow: hidden; }
+  .post-hero img { width: 100%; height: 100%; object-fit: cover; }
+  .post-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.6) 100%); display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 48px 24px; text-align: center; color: white; }
+  .post-hero-overlay .breadcrumb { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 14px; }
+  .post-hero-overlay .breadcrumb a { color: var(--gold-light); }
+  .post-hero-overlay h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 5vw, 52px); font-weight: 700; line-height: 1.2; max-width: 800px; }
+  .post-hero-overlay .post-meta { margin-top: 14px; font-size: 13.5px; color: rgba(255,255,255,0.65); display: flex; gap: 20px; }
+  .post-wrap { max-width: 800px; margin: 0 auto; padding: 64px 24px 80px; }
+  .post-lead { font-size: 18px; line-height: 1.8; color: var(--text-muted); margin-bottom: 40px; border-left: 4px solid var(--green-light); padding-left: 20px; }
+  .post-wrap h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: var(--green-dark); margin: 40px 0 14px; }
+  .post-wrap p { font-size: 15.5px; line-height: 1.85; color: var(--text-muted); margin-bottom: 18px; }
+  .post-wrap ul { padding-left: 22px; margin-bottom: 18px; }
+  .post-wrap ul li { font-size: 15.5px; line-height: 1.85; color: var(--text-muted); margin-bottom: 8px; }
+  .post-img { width: 100%; border-radius: 12px; margin: 32px 0; object-fit: cover; max-height: 420px; }
+  .fact-box { background: var(--green-pale); border-radius: 12px; padding: 24px 28px; margin: 32px 0; }
+  .fact-box h4 { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--green-dark); margin-bottom: 14px; }
+  .fact-row { display: flex; gap: 12px; margin-bottom: 8px; font-size: 14.5px; }
+  .fact-label { font-weight: 600; color: var(--green-mid); min-width: 160px; }
+  .fact-val { color: var(--text); }
+  .cta-box { background: var(--green-dark); color: white; border-radius: 14px; padding: 36px; text-align: center; margin-top: 56px; }
+  .cta-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; margin-bottom: 12px; }
+  .cta-box p { font-size: 15px; color: rgba(255,255,255,0.75); margin-bottom: 24px; }
+  .btn-gold { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--green-dark); padding: 13px 28px; border-radius: 4px; font-weight: 600; font-size: 14px; transition: all 0.2s; }
+  .btn-gold:hover { background: var(--gold-light); }
+  .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--green-mid); font-size: 14px; font-weight: 500; margin-bottom: 40px; }
+  .back-link:hover { color: var(--green-dark); }
+  footer { background: #0e2218; color: rgba(255,255,255,0.65); padding: 56px 24px 0; }
+  .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: white; margin-bottom: 14px; }
+  .footer-logo span { color: var(--green-light); }
+  .footer-desc { font-size: 13.5px; line-height: 1.75; margin-bottom: 22px; }
+  .social-links { display: flex; gap: 10px; }
+  .social-link { width: 36px; height: 36px; background: rgba(255,255,255,0.07); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.65); font-size: 13px; transition: all 0.2s; border: 1px solid rgba(255,255,255,0.1); font-weight: 700; }
+  .social-link:hover { background: var(--green-mid); color: white; }
+  .footer-col h4 { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 18px; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a { font-size: 13.5px; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--green-light); }
+  .contact-item { display: flex; gap: 10px; margin-bottom: 14px; font-size: 13.5px; }
+  .contact-item a { color: rgba(255,255,255,0.6); transition: color 0.2s; }
+  .footer-bottom { max-width: 1200px; margin: 0 auto; padding: 20px 0; display: flex; justify-content: space-between; font-size: 12.5px; color: rgba(255,255,255,0.3); flex-wrap: wrap; gap: 10px; }
+  @media(max-width:900px){ .footer-grid { grid-template-columns: 1fr 1fr; } .nav-menu { display: none; } }
+  @media(max-width:600px){ .footer-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span class="tbi">&#128205; <a href="contact.html">Bangkok, Thailand</a></span>
+      <span class="tbi">&#9993; <a href="mailto:monai.suriya@gmail.com">monai.suriya@gmail.com</a></span>
+    </div>
+    <div class="topbar-right">
+      <span class="tbi">&#128222; <a href="tel:+66954403465">+66-954403465</a></span>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="images/index/logo.svg" alt="Thai Terra Gardens" style="height:50px;">
+    </a>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Company</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="order-process.html">Order Process</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <img src="images/blog/blog-bonsai.jpg" alt="Thai Bonsai">
+  <div class="post-hero-overlay">
+    <div class="breadcrumb"><a href="index.html">Home</a> / <a href="blog.html">Blog</a> / Thai Bonsai</div>
+    <h1>Thai Bonsai — Living Art with Luxury Market Value</h1>
+    <div class="post-meta"><span>Art &amp; Culture</span><span>October 2025</span><span>By Thai Terra Gardens</span></div>
+  </div>
+</div>
+
+<div class="post-wrap">
+  <a href="blog.html" class="back-link">&#8592; Back to Blog</a>
+
+  <p class="post-lead">
+    Thai bonsai represents a unique intersection of ancient Asian horticultural art and tropical species found nowhere else in the world. Internationally recognised for their bold character and dramatic styling, Thai bonsai command premium prices in the global collector and luxury garden market.
+  </p>
+
+  <div class="fact-box">
+    <h4>Thai Bonsai at a Glance</h4>
+    <div class="fact-row"><span class="fact-label">Art Form Origin</span><span class="fact-val">China (penjing) → Japan (bonsai) → Southeast Asia (adapted styles)</span></div>
+    <div class="fact-row"><span class="fact-label">Popular Thai Species</span><span class="fact-val">Ficus (Banyan), Adenium, Tamarind, Serissa, Fukien Tea, Bouganvillea</span></div>
+    <div class="fact-row"><span class="fact-label">Style Range</span><span class="fact-val">Formal upright, informal upright, slanting, cascading, forest group</span></div>
+    <div class="fact-row"><span class="fact-label">Age Range Available</span><span class="fact-val">5 years to over 50 years (collected specimens)</span></div>
+    <div class="fact-row"><span class="fact-label">Price Range</span><span class="fact-val">USD 200 – USD 50,000+ (mature collector pieces)</span></div>
+    <div class="fact-row"><span class="fact-label">Market</span><span class="fact-val">Collectors, luxury hotels, private estates, interior designers</span></div>
+  </div>
+
+  <h2>What Makes Thai Bonsai Distinct</h2>
+  <p>
+    Bonsai as an art form arrived in Thailand through Chinese cultural influence and was embraced with distinctive local flair. Thai bonsai artists — particularly those working with tropical Ficus species — have developed a signature style: massive, dramatically buttressed nebari (surface roots), thick powerful trunks with strong movement, and dense, cloud-like foliage canopies.
+  </p>
+  <p>
+    The tropical climate of Thailand is a key advantage. Warmer temperatures and longer growing seasons mean that Thai bonsai develop faster than their Japanese counterparts. Thick trunk growth that would take 20 years in Japan can be achieved in 8–10 years in Thailand. This allows Thai nurseries to offer mature, visually impressive specimens at relatively accessible price points compared to similarly aged Japanese bonsai.
+  </p>
+
+  <img src="images/blog/blog-bonsai-3.jpg" alt="Thai bonsai close up" class="post-img">
+
+  <h2>Species Unique to Thai Bonsai</h2>
+  <p>
+    One of the most compelling reasons to source bonsai from Thailand is access to tropical species that simply cannot be cultivated as bonsai in temperate climates. These species are largely unavailable in the collections of European, American, or Japanese bonsai artists, making Thai specimens genuinely unique:
+  </p>
+  <ul>
+    <li><strong>Ficus benjamina and Ficus microcarpa:</strong> The classic Thai bonsai — dramatic aerial roots, rugged trunk, and fine foliage. Capable of growing extraordinary nebari over decades.</li>
+    <li><strong>Adenium obesum (Desert Rose):</strong> Swollen caudex (base), vibrant pink/red flowers, and remarkable drought tolerance. One of the most sought-after Thai bonsai varieties internationally.</li>
+    <li><strong>Tamarind (Tamarindus indica):</strong> Prized for its naturally gnarled, ancient-looking trunk and fine pinnate foliage. Thai artists have developed spectacular old-specimen tamarind bonsai.</li>
+    <li><strong>Bouganvillea:</strong> Spectacular flowering bonsai with vivid bracts in pink, purple, red, and orange. Thai growers have mastered training large-trunk specimens with reliable flowering.</li>
+    <li><strong>Fukien Tea (Carmona retusa):</strong> Small glossy leaves, fine branching, tiny white flowers. A classic of Southeast Asian bonsai with high international demand.</li>
+  </ul>
+
+  <h2>Bonsai in Luxury Design and Hospitality</h2>
+  <p>
+    In the luxury interiors market, bonsai have evolved from hobbyist collections into statement pieces for high-end spaces. A large, well-trained Thai bonsai placed on a reception desk, in a hotel lobby entrance, or at the centre of a luxury villa garden communicates refinement, heritage, and a sophisticated appreciation of living art.
+  </p>
+  <p>
+    Hotels and resorts across the Middle East, Europe, and Asia increasingly seek distinctive bonsai specimens for feature spaces. Unlike cut flowers or seasonal plantings, a bonsai is a long-term investment — a living object that improves with age and care, developing more character and value over time.
+  </p>
+  <p>
+    Thai Terra Gardens works with specialist bonsai nurseries in Thailand to source appropriate specimens for hospitality and design projects — from uniform decorative pieces for consistent display across multiple locations, to unique collector-grade specimens for feature positions.
+  </p>
+
+  <h2>Care for Indoor and Outdoor Bonsai</h2>
+  <p>
+    Tropical Thai bonsai have different care requirements from traditional Japanese bonsai. Most Thai species prefer warm temperatures and humidity, making them ideal for tropical and subtropical outdoor use, or for well-lit indoor spaces with adequate humidity.
+  </p>
+  <ul>
+    <li><strong>Light:</strong> Bright indirect to direct light; most tropical bonsai need good light for health</li>
+    <li><strong>Water:</strong> Regular watering; allow slight drying between sessions; never allow to dry completely</li>
+    <li><strong>Humidity:</strong> Tropical species thrive in 50–70% humidity; use humidity trays if indoors</li>
+    <li><strong>Fertiliser:</strong> Balanced slow-release fertiliser during growing season; reduce in cooler months</li>
+    <li><strong>Pruning:</strong> Regular pinching and pruning to maintain form; Thai species are generally vigorous and respond well to pruning</li>
+    <li><strong>Repotting:</strong> Every 1–3 years depending on species and pot size; use well-draining bonsai soil</li>
+  </ul>
+
+  <h2>Export and Sourcing</h2>
+  <p>
+    Thai Terra Gardens partners with reputable bonsai growers and artists across Thailand to offer export-quality specimens with full phytosanitary documentation. We can arrange shipping of individual collector pieces as well as larger commercial orders for hospitality and design projects. Each tree is packed to the highest standards to ensure safe arrival.
+  </p>
+  <p>
+    Contact us to discuss your requirements — whether you need a single extraordinary centrepiece or a curated collection for a luxury property.
+  </p>
+
+  <div class="cta-box">
+    <h3>Acquire Premium Thai Bonsai</h3>
+    <p>From collector specimens to hospitality installations — our team can source the right pieces for your project.</p>
+    <a href="contact.html" class="btn-gold">Get in Touch &#8594;</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Thai Terra <span>Gardens</span></div>
+      <p class="footer-desc">A Thai company for exporting plants with more than 11 years of experience. Established nurseries and local partnerships make us the best plant exporter in Thailand.</p>
+      <div class="social-links">
+        <a href="https://api.whatsapp.com/send/?phone=66954403465" class="social-link" target="_blank">wa</a>
+        <a href="https://www.linkedin.com/in/monai-suriya/" class="social-link" target="_blank">in</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="mission.html">Mission &amp; Vision</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="products.html#cat1">Ornamental Flowering Trees</a></li>
+        <li><a href="products.html#cat2">Shade &amp; Architectural Trees</a></li>
+        <li><a href="products.html#cat3">Palms &amp; Structural Plants</a></li>
+        <li><a href="products.html#cat5">Super Luxury &amp; Special</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="contact-item">&#128222; <a href="tel:+66954403465">+66-954403465</a></div>
+      <div class="contact-item">&#9993; <a href="mailto:monai.suriya@gmail.com">monai.suriya@gmail.com</a></div>
+      <div class="contact-item">&#128205; Kaeng Khoi District, Saraburi 18110, Thailand</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&#169; 2024 Thai Terra Gardens Co., Ltd. All rights reserved.</span>
+    <span>Plant Exporters in Thailand</span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banyan Tree (Ficus microcarpa) - Thai Terra Gardens</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --green-dark: #1a3a2a; --green-mid: #2d6a4f; --green-light: #52b788; --green-pale: #d8f3dc; --gold: #c9a84c; --gold-light: #e8c97a; --cream: #f8f5ef; --white: #ffffff; --text: #2c2c2c; --text-muted: #6b6b6b; --border: #e2ddd6; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Jost', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+  a { text-decoration: none; color: inherit; }
+  .topbar { background: var(--green-dark); color: rgba(255,255,255,0.75); font-size: 12.5px; padding: 7px 0; }
+  .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .topbar a { color: rgba(255,255,255,0.75); transition: color 0.2s; }
+  .topbar a:hover { color: var(--gold-light); }
+  .topbar-left, .topbar-right { display: flex; align-items: center; gap: 20px; }
+  .tbi { display: flex; align-items: center; gap: 6px; }
+  nav { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; color: var(--green-dark); display: flex; align-items: center; gap: 10px; }
+  .nav-menu { display: flex; align-items: center; gap: 4px; list-style: none; }
+  .nav-menu > li { position: relative; }
+  .nav-menu > li > a { display: flex; align-items: center; gap: 5px; padding: 10px 14px; font-size: 14px; font-weight: 500; color: var(--text); border-radius: 6px; transition: all 0.2s; white-space: nowrap; }
+  .nav-menu > li > a:hover, .nav-menu > li > a.active { color: var(--green-mid); background: var(--green-pale); }
+  .dropdown { position: absolute; top: calc(100% + 6px); left: 0; background: white; border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 12px 40px rgba(0,0,0,0.12); min-width: 200px; padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(-6px); transition: all 0.2s; z-index: 200; }
+  .nav-menu > li:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+  .dropdown li { list-style: none; }
+  .dropdown a { display: block; padding: 8px 18px; font-size: 13.5px; color: var(--text-muted); transition: all 0.15s; }
+  .dropdown a:hover { color: var(--green-mid); background: var(--green-pale); }
+  .products-dropdown { position: absolute; top: calc(100% + 6px); left: 0; background: white; border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 12px 40px rgba(0,0,0,0.12); min-width: 250px; padding: 6px 0; opacity: 0; visibility: hidden; transform: translateY(-6px); transition: all 0.2s; z-index: 200; }
+  .nav-menu > li:hover .products-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+  .cat-item { position: relative; }
+  .cat-item > a { display: flex; align-items: center; justify-content: space-between; padding: 10px 18px; font-size: 14px; font-weight: 500; color: var(--text); transition: all 0.15s; white-space: nowrap; }
+  .cat-item > a:hover { color: var(--green-mid); background: var(--green-pale); }
+  .cat-item > a .arrow { font-size: 12px; color: var(--text-muted); }
+  .flyout { position: absolute; top: -6px; left: 100%; background: white; border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 12px 40px rgba(0,0,0,0.12); min-width: 210px; padding: 6px 0; opacity: 0; visibility: hidden; transition: all 0.2s; z-index: 201; }
+  .cat-item:hover .flyout { opacity: 1; visibility: visible; }
+  .flyout a { display: block; padding: 9px 18px; font-size: 13.5px; color: var(--text-muted); transition: all 0.15s; white-space: nowrap; }
+  .flyout a:hover { color: var(--green-mid); background: var(--green-pale); padding-left: 24px; }
+  .nav-cta { background: var(--green-mid) !important; color: white !important; padding: 9px 20px !important; border-radius: 6px !important; }
+  .nav-cta:hover { background: var(--green-dark) !important; }
+  .plant-hero { position: relative; height: 60vh; min-height: 420px; overflow: hidden; }
+  .plant-hero img { width: 100%; height: 100%; object-fit: cover; }
+  .plant-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,35,18,0.82) 40%, rgba(10,35,18,0.25)); display: flex; align-items: center; }
+  .plant-hero-content { max-width: 1200px; margin: 0 auto; padding: 0 24px; color: white; }
+  .breadcrumb { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 14px; }
+  .breadcrumb a { color: var(--gold-light); }
+  .cat-badge { display: inline-block; background: var(--gold); color: var(--green-dark); font-size: 11px; font-weight: 700; padding: 4px 14px; border-radius: 20px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+  .plant-hero-content h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 5vw, 60px); font-weight: 700; line-height: 1.1; margin-bottom: 6px; }
+  .plant-hero-content .sci { font-style: italic; font-size: 18px; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+  .plant-hero-content .th { font-size: 24px; color: var(--gold-light); }
+  .plant-body { max-width: 1200px; margin: 0 auto; padding: 64px 24px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: start; }
+  .plant-desc { font-size: 16px; line-height: 1.85; color: var(--text-muted); margin-bottom: 36px; }
+  .section-heading { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--green-dark); margin-bottom: 20px; }
+  .spec-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .spec-item { padding: 14px 18px; border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); }
+  .spec-item:nth-child(even) { border-right: none; }
+  .spec-item:nth-last-child(-n+2) { border-bottom: none; }
+  .spec-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green-mid); margin-bottom: 4px; }
+  .spec-value { font-size: 13.5px; color: var(--text); font-weight: 500; }
+  .export-box { background: var(--green-dark); color: white; border-radius: 14px; padding: 28px; height: 100%; box-sizing: border-box; }
+  .export-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; margin-bottom: 20px; color: var(--gold-light); }
+  .export-row { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 13.5px; }
+  .export-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .elabel { color: rgba(255,255,255,0.45); font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
+  .evalue { color: white; text-align: right; }
+  .cta-strip { background: var(--green-mid); color: white; text-align: center; padding: 60px 24px; }
+  .cta-strip h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px,4vw,40px); font-weight: 700; margin-bottom: 12px; }
+  .cta-strip p { color: rgba(255,255,255,0.75); max-width: 500px; margin: 0 auto 28px; line-height: 1.7; }
+  .btn-gold { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--green-dark); padding: 13px 28px; border-radius: 4px; font-weight: 600; font-size: 14px; transition: all 0.2s; margin: 6px; }
+  .btn-gold:hover { background: var(--gold-light); }
+  .btn-white { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.15); color: white; padding: 13px 28px; border-radius: 4px; font-weight: 500; font-size: 14px; border: 1px solid rgba(255,255,255,0.3); margin: 6px; }
+  .btn-white:hover { background: rgba(255,255,255,0.25); }
+  footer { background: #0e2218; color: rgba(255,255,255,0.65); padding: 56px 24px 0; }
+  .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: white; margin-bottom: 14px; }
+  .footer-desc { font-size: 13.5px; line-height: 1.75; margin-bottom: 22px; }
+  .social-links { display: flex; gap: 10px; }
+  .social-link { width: 36px; height: 36px; background: rgba(255,255,255,0.07); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.65); font-size: 13px; border: 1px solid rgba(255,255,255,0.1); font-weight: 700; }
+  .social-link:hover { background: var(--green-mid); color: white; }
+  .footer-col h4 { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 18px; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a { font-size: 13.5px; color: rgba(255,255,255,0.6); }
+  .footer-col ul li a:hover { color: var(--green-light); }
+  .contact-item { display: flex; gap: 10px; margin-bottom: 14px; font-size: 13.5px; }
+  .contact-item a { color: rgba(255,255,255,0.6); }
+  .footer-bottom { max-width: 1200px; margin: 0 auto; padding: 20px 0; display: flex; justify-content: space-between; font-size: 12.5px; color: rgba(255,255,255,0.3); flex-wrap: wrap; gap: 10px; }
+  @media(max-width:900px) { .plant-body { grid-template-columns: 1fr; gap: 40px; } .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } .nav-menu { display: none; } }
+  @media(max-width:600px) { .footer-grid { grid-template-columns: 1fr; } .spec-grid { grid-template-columns: 1fr; } .spec-item { border-right: none !important; } }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span class="tbi">📍 <a href="contact.html">Bangkok, Thailand</a></span>
+      <span class="tbi">✉️ <a href="mailto:monai.suriya@gmail.com">monai.suriya@gmail.com</a></span>
+    </div>
+    <div class="topbar-right">
+      <span class="tbi">📞 <a href="tel:+66954403465">+66-954403465</a></span>
+    </div>
+  </div>
+</div>
+
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="images/index/logo.svg" alt="Thai Terra Gardens" style="height:50px;">
+    </a>
+    <ul class="nav-menu">
+      <li><a href="index.html" >Home</a></li>
+      <li>
+        <a href="about.html" >Company ▾</a>
+        <ul class="dropdown">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="mission.html">Mission &amp; Vision</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="products.html" class="active" >Products ▾</a>
+        <div class="products-dropdown">
+          <div class="cat-item">
+            <a href="products.html#cat1">🌸 Ornamental Flowering Trees <span class="arrow">›</span></a>
+            <div class="flyout">
+              <a href="plant-flame-tree.html">Flame Tree</a>
+              <a href="plant-yellow-tabebuia.html">Yellow Tabebuia</a>
+              <a href="plant-pink-trumpet.html">Pink Trumpet Tree</a>
+              <a href="plant-golden-shower.html">Golden Shower Tree</a>
+              <a href="plant-indian-cork.html">Indian Cork Tree</a>
+            </div>
+          </div>
+          <div class="cat-item">
+            <a href="products.html#cat2">🌳 Shade &amp; Architectural Trees <span class="arrow">›</span></a>
+            <div class="flyout">
+              <a href="plant-rain-tree.html">Rain Tree</a>
+              <a href="plant-neem.html">Neem Tree</a>
+              <a href="plant-sacred-fig.html">Sacred Fig</a>
+              <a href="plant-banyan.html">Banyan Tree</a>
+              <a href="plant-tropical-almond.html">Tropical Almond</a>
+            </div>
+          </div>
+          <div class="cat-item">
+            <a href="products.html#cat3">🌴 Palms &amp; Structural Plants</a>
+          </div>
+          <div class="cat-item">
+            <a href="products.html#cat4">🌿 Screening &amp; Privacy</a>
+          </div>
+          <div class="cat-item">
+            <a href="products.html#cat5">✨ Super Luxury &amp; Special</a>
+          </div>
+        </div>
+      </li>
+      <li><a href="order-process.html" >Order Process</a></li>
+      <li><a href="blog.html" >Blog</a></li>
+      <li><a href="gallery.html" >Gallery</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .plant-header { background: var(--green-dark); color: white; padding: 44px 24px 40px; background-size: cover; background-position: center; position: relative; transition: background-image 0.3s; }
+  .plant-header::before { content: ''; position: absolute; inset: 0; background: rgba(10,35,18,0.78); }
+  .plant-header-inner { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
+  .plant-header .breadcrumb { font-size: 13px; color: rgba(255,255,255,0.45); margin-bottom: 14px; }
+  .plant-header .breadcrumb a { color: var(--gold-light); transition: color 0.2s; }
+  .plant-header .breadcrumb a:hover { color: white; }
+  .plant-h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 700; line-height: 1.1; margin-bottom: 6px; }
+  .plant-sci-name { font-style: italic; font-size: 17px; color: rgba(255,255,255,0.55); margin-bottom: 6px; }
+  .plant-thai-name { font-size: 22px; color: var(--gold-light); }
+
+  .plant-main { max-width: 900px; margin: 0 auto; padding: 48px 24px 64px; }
+  .photo-viewer { position: relative; border-radius: 16px; overflow: hidden; background: #111; aspect-ratio: 16/9; box-shadow: 0 6px 36px rgba(0,0,0,0.13); }
+  .photo-viewer img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.4s ease; display: block; cursor: zoom-in; }
+  .photo-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; background: rgba(0,0,0,0.45); color: white; border: none; border-radius: 50%; font-size: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.2s, background 0.2s; z-index: 2; line-height: 1; }
+  .photo-viewer:hover .photo-nav { opacity: 1; }
+  .photo-nav:hover { background: rgba(0,0,0,0.72); }
+  .photo-nav.prev { left: 14px; }
+  .photo-nav.next { right: 14px; }
+  .photo-badge { position: absolute; bottom: 14px; right: 14px; background: rgba(0,0,0,0.52); color: white; font-size: 12px; font-weight: 500; padding: 5px 12px; border-radius: 20px; letter-spacing: 0.5px; }
+  .thumb-row { display: flex; gap: 8px; margin-top: 12px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
+  .thumb-row::-webkit-scrollbar { height: 4px; }
+  .thumb-row::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+  .thumb-row img { width: 72px; height: 54px; object-fit: cover; border-radius: 7px; cursor: pointer; opacity: 0.55; transition: opacity 0.2s, transform 0.15s; flex-shrink: 0; border: 2px solid transparent; }
+  .thumb-row img:hover { opacity: 0.9; transform: scale(1.05); }
+  .thumb-row img.th-active { opacity: 1; border-color: var(--green-mid); }
+
+  .plant-info-wrap { margin-top: 44px; display: flex; flex-direction: column; gap: 28px; }
+  .plant-info-wrap .plant-desc { font-size: 16px; line-height: 1.85; color: var(--text-muted); }
+  .plant-info-wrap .section-heading { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: var(--green-dark); margin-bottom: 14px; }
+  .plant-info-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 28px; align-items: stretch; }
+  .plant-page-cta { display: flex; gap: 12px; flex-wrap: wrap; padding-top: 4px; justify-content: center; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--green-mid); color: white; padding: 13px 28px; border-radius: 4px; font-weight: 600; font-size: 14px; transition: all 0.2s; }
+  .btn-primary:hover { background: var(--green-dark); }
+  .btn-outline { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--green-mid); padding: 12px 26px; border-radius: 4px; font-weight: 500; font-size: 14px; border: 1.5px solid var(--green-mid); transition: all 0.2s; }
+  .btn-outline:hover { background: var(--green-pale); }
+
+  /* Lightbox */
+  #lb { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.93); z-index: 2000; align-items: center; justify-content: center; }
+  #lb.lb-open { display: flex; }
+  #lb-img { max-width: 90vw; max-height: 88vh; object-fit: contain; border-radius: 6px; user-select: none; }
+  #lb-close { position: fixed; top: 18px; right: 24px; background: none; border: none; color: white; font-size: 40px; line-height: 1; cursor: pointer; opacity: 0.7; transition: opacity 0.2s; z-index: 2001; }
+  #lb-close:hover { opacity: 1; }
+  #lb-prev, #lb-next { position: fixed; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.12); border: none; color: white; font-size: 36px; padding: 14px 18px; cursor: pointer; border-radius: 6px; transition: background 0.2s; z-index: 2001; line-height: 1; }
+  #lb-prev { left: 16px; }
+  #lb-next { right: 16px; }
+  #lb-prev:hover, #lb-next:hover { background: rgba(255,255,255,0.28); }
+  #lb-counter { position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.55); font-size: 13px; letter-spacing: 0.5px; }
+
+  @media(max-width:700px) { .plant-info-grid { grid-template-columns: 1fr; } }
+  @media(max-width:600px) { .plant-main { padding: 32px 16px 48px; } .spec-grid { grid-template-columns: 1fr; } .spec-item { border-right: none !important; } }
+</style>
+
+<div class="plant-header" id="plant-header">
+  <div class="plant-header-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a> / <a href="products.html#cat2">Shade &amp; Architectural Trees</a> / Banyan Tree</div>
+    <div class="cat-badge">Shade &amp; Architectural Trees</div>
+    <h1 class="plant-h1">Banyan Tree</h1>
+    <div class="plant-sci-name">Ficus microcarpa</div>
+    <div class="plant-thai-name">กร่าง</div>
+  </div>
+</div>
+
+<div class="plant-main">
+  <div>
+    <div class="plant-photo-sticky">
+      <div class="photo-viewer">
+      <img id="hero-img" src="images/photo_spicies/Banyan Tree (Ficus benghalensis)/501428880_1412454000072230_3075358720567216508_n.jpg" alt="Banyan Tree">
+      <button class="photo-nav prev">&#8249;</button>
+      <button class="photo-nav next">&#8250;</button>
+      <div class="photo-badge" id="photo-badge">1 / 7</div>
+    </div>
+    <div class="thumb-row">
+      <img src="images/photo_spicies/Banyan Tree (Ficus benghalensis)/501428880_1412454000072230_3075358720567216508_n.jpg" alt="Banyan Tree">
+      <img src="images/photo_spicies/Banyan Tree (Ficus benghalensis)/501466699_1412454130072217_1952621753436490458_n.jpg" alt="Banyan Tree">
+      <img src="images/photo_spicies/Banyan Tree (Ficus benghalensis)/501786325_1412454243405539_1230972743945295232_n.jpg" alt="Banyan Tree">
+      <img src="images/photo_spicies/Banyan Tree (Ficus benghalensis)/502663526_1412454046738892_2566940119061711212_n.jpg" alt="Banyan Tree">
+      <img src="images/photo_spicies/Banyan Tree (Ficus benghalensis)/623215064_4325264311086172_3802025203169882879_n.jpg" alt="Banyan Tree">
+      <img src="images/photo_spicies/Banyan Tree (Ficus benghalensis)/646375216_2176000626534359_2715966873762710423_n.jpg" alt="Banyan Tree">
+      <img src="images/photo_spicies/Banyan Tree (Ficus benghalensis)/647307268_2176000576534364_7874398825916873098_n.jpg" alt="Banyan Tree">
+    </div>
+    </div>
+  </div>
+  <div class="plant-info-wrap">
+    <p class="plant-desc">A powerful landscape tree characterized by aerial roots and a strong architectural presence.</p>
+    <div class="plant-info-grid">
+      <div>
+        <h3 class="section-heading">Specimen Details</h3>
+      <div class="spec-grid">
+      <div class="spec-item"><div class="spec-label">Light</div><div class="spec-value">Full sun</div></div>
+      <div class="spec-item"><div class="spec-label">Height (Export)</div><div class="spec-value">Customizable to client specifications</div></div>
+      <div class="spec-item"><div class="spec-label">Watering</div><div class="spec-value">Moderate</div></div>
+      <div class="spec-item"><div class="spec-label">Availability</div><div class="spec-value">Large specimens available</div></div>
+      <div class="spec-item"><div class="spec-label">Climate</div><div class="spec-value">Tropical</div></div>
+      <div class="spec-item"><div class="spec-label">Ideal For</div><div class="spec-value">Landmark tree</div></div>
+      <div class="spec-item"><div class="spec-label">Growth Habit</div><div class="spec-value">Spreading with aerial roots</div></div>
+      <div class="spec-item"><div class="spec-label">Origin</div><div class="spec-value">Thailand</div></div>
+    </div>
+      </div>
+      <div class="export-box">
+      <h3>Export Information</h3>
+      <div class="export-row"><span class="elabel">Export Medium</span><span class="evalue">Root ball (special transport)</span></div>
+      <div class="export-row"><span class="elabel">Trunk Size</span><span class="evalue">Customizable</span></div>
+      <div class="export-row"><span class="elabel">Loading</span><span class="evalue">Optimized for container shipment</span></div>
+      <div class="export-row"><span class="elabel">Grade</span><span class="evalue">Premium selected specimens</span></div>
+    </div>
+    </div>
+    <div class="plant-page-cta">
+      <a href="contact.html" class="btn-primary">Request a Quote &rarr;</a>
+      <a href="order-process.html" class="btn-outline">How to Order</a>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="lb">
+  <button id="lb-close">&#x2715;</button>
+  <button id="lb-prev">&#8249;</button>
+  <img id="lb-img" src="" alt="">
+  <button id="lb-next">&#8250;</button>
+  <div id="lb-counter"></div>
+</div>
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Thai Terra Gardens</div>
+      <p class="footer-desc">A Thai company for exporting plants with more than 11 years of experience. Established nurseries and local partnerships make us the best plant exporter in Thailand.</p>
+      <div class="social-links">
+        <a href="https://api.whatsapp.com/send/?phone=66954403465" class="social-link" target="_blank">wa</a>
+        <a href="https://www.linkedin.com/in/monai-suriya/" class="social-link" target="_blank">in</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="mission.html">Mission &amp; Vision</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="products.html#cat1">Ornamental Flowering Trees</a></li>
+        <li><a href="products.html#cat4">Screening &amp; Privacy</a></li>
+        <li><a href="products.html#cat2">Shade &amp; Architectural Trees</a></li>
+        <li><a href="products.html#cat3">Palms &amp; Structural Plants</a></li>
+        <li><a href="products.html#cat5">Super Luxury &amp; Special</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="contact-item">📞 <a href="tel:+66954403465">+66-954403465</a></div>
+      <div class="contact-item">✉️ <a href="mailto:monai.suriya@gmail.com">monai.suriya@gmail.com</a></div>
+      <div class="contact-item">📍 Kaeng Khoi District, Saraburi 18110, Thailand</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 Thai Terra Gardens Co., Ltd. All rights reserved.</span>
+    <span>Plant Exporters in Thailand</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var lb = document.getElementById('lb');
+  var lbImg = document.getElementById('lb-img');
+  var lbCounter = document.getElementById('lb-counter');
+  var hero = document.getElementById('hero-img');
+  if (!lb || !hero) return;
+
+  // Get imgs array from the gallery script
+  var imgs = window.__plantImgs || [];
+  var lbCurrent = 0;
+
+  function openLb(n) {
+    if (!imgs.length) return;
+    lbCurrent = (n + imgs.length) % imgs.length;
+    lbImg.src = imgs[lbCurrent];
+    lbCounter.textContent = (lbCurrent + 1) + ' / ' + imgs.length;
+    lb.classList.add('lb-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb() {
+    lb.classList.remove('lb-open');
+    document.body.style.overflow = '';
+  }
+
+  hero.addEventListener('click', function() { openLb(window.__plantCurrent || 0); });
+  document.getElementById('lb-close').addEventListener('click', closeLb);
+  document.getElementById('lb-prev').addEventListener('click', function(){ openLb(lbCurrent - 1); });
+  document.getElementById('lb-next').addEventListener('click', function(){ openLb(lbCurrent + 1); });
+  lb.addEventListener('click', function(e){ if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', function(e){
+    if (!lb.classList.contains('lb-open')) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowLeft') openLb(lbCurrent - 1);
+    if (e.key === 'ArrowRight') openLb(lbCurrent + 1);
+  });
+})();
+</script>
+</body>
+</html>
+
+<script>
+(function(){
+  window.__plantImgs = window.__plantImgs || (function(){ return ["images/photo_spicies/Banyan Tree (Ficus benghalensis)/501428880_1412454000072230_3075358720567216508_n.jpg","images/photo_spicies/Banyan Tree (Ficus benghalensis)/501466699_1412454130072217_1952621753436490458_n.jpg","images/photo_spicies/Banyan Tree (Ficus benghalensis)/501786325_1412454243405539_1230972743945295232_n.jpg","images/photo_spicies/Banyan Tree (Ficus benghalensis)/502663526_1412454046738892_2566940119061711212_n.jpg","images/photo_spicies/Banyan Tree (Ficus benghalensis)/623215064_4325264311086172_3802025203169882879_n.jpg","images/photo_spicies/Banyan Tree (Ficus benghalensis)/646375216_2176000626534359_2715966873762710423_n.jpg","images/photo_spicies/Banyan Tree (Ficus benghalensis)/647307268_2176000576534364_7874398825916873098_n.jpg"]; })();
+  var imgs = window.__plantImgs;
+  var hero = document.getElementById('hero-img');
+  var thumbs = document.querySelectorAll('.thumb-row img');
+  var badge = document.getElementById('photo-badge');
+  var current = 0;
+  if (!hero) return;
+  function goTo(n) {
+    current = (n + imgs.length) % imgs.length;
+    hero.style.opacity = '0';
+    var c = current;
+    setTimeout(function(){
+      hero.src = imgs[c];
+      hero.style.opacity = '1';
+      var hdr = document.getElementById('plant-header');
+      if (hdr) hdr.style.backgroundImage = 'url("' + imgs[c] + '")';
+      if (badge) badge.textContent = (c + 1) + ' / ' + imgs.length;
+      thumbs.forEach(function(t, i){ t.classList.toggle('th-active', i === c); });
+      if (thumbs[c]) thumbs[c].scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
+    }, 380);
+  }
+  var prevBtn = document.querySelector('.photo-nav.prev');
+  var nextBtn = document.querySelector('.photo-nav.next');
+  if (prevBtn) prevBtn.addEventListener('click', function(){ goTo(current - 1); });
+  if (nextBtn) nextBtn.addEventListener('click', function(){ goTo(current + 1); });
+  thumbs.forEach(function(t, i){ t.addEventListener('click', function(){ goTo(i); }); });
+  if (thumbs.length) thumbs[0].classList.add('th-active');
+  var hdrInit = document.getElementById('plant-header');
+  if (hdrInit && imgs.length) hdrInit.style.backgroundImage = 'url("' + imgs[0] + '")';
+  // expose current for lightbox
+  Object.defineProperty(window, '__plantCurrent', { get: function(){ return current; } });
+})();
+</script>
+
+
+<script>
+(function(){
+  var lb = document.getElementById('lb');
+  var lbImg = document.getElementById('lb-img');
+  var lbCounter = document.getElementById('lb-counter');
+  var hero = document.getElementById('hero-img');
+  if (!lb || !hero) return;
+
+  // Get imgs array from the gallery script
+  var imgs = window.__plantImgs || [];
+  var lbCurrent = 0;
+
+  function openLb(n) {
+    if (!imgs.length) return;
+    lbCurrent = (n + imgs.length) % imgs.length;
+    lbImg.src = imgs[lbCurrent];
+    lbCounter.textContent = (lbCurrent + 1) + ' / ' + imgs.length;
+    lb.classList.add('lb-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb() {
+    lb.classList.remove('lb-open');
+    document.body.style.overflow = '';
+  }
+
+  hero.addEventListener('click', function() { openLb(window.__plantCurrent || 0); });
+  document.getElementById('lb-close').addEventListener('click', closeLb);
+  document.getElementById('lb-prev').addEventListener('click', function(){ openLb(lbCurrent - 1); });
+  document.getElementById('lb-next').addEventListener('click', function(){ openLb(lbCurrent + 1); });
+  lb.addEventListener('click', function(e){ if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', function(e){
+    if (!lb.classList.contains('lb-open')) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowLeft') openLb(lbCurrent - 1);
+    if (e.key === 'ArrowRight') openLb(lbCurrent + 1);
+  });
+})();
+</script>
+</body>
+</html>
