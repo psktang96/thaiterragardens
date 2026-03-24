@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golden Shower Tree — Thailand's National Flower | Thai Terra Gardens Blog</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --green-dark: #1a3a2a; --green-mid: #2d6a4f; --green-light: #52b788;
+    --green-pale: #d8f3dc; --gold: #c9a84c; --gold-light: #e8c97a;
+    --cream: #f8f5ef; --white: #ffffff; --text: #2c2c2c;
+    --text-muted: #6b6b6b; --border: #e2ddd6;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Jost', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+  a { text-decoration: none; color: inherit; }
+  .topbar { background: var(--green-dark); color: rgba(255,255,255,0.75); font-size: 12.5px; padding: 7px 0; }
+  .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+  .topbar a { color: rgba(255,255,255,0.75); transition: color 0.2s; }
+  .topbar a:hover { color: var(--gold-light); }
+  .topbar-left, .topbar-right { display: flex; align-items: center; gap: 20px; }
+  .tbi { display: flex; align-items: center; gap: 6px; }
+  nav { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; color: var(--green-dark); }
+  .nav-menu { display: flex; align-items: center; gap: 4px; list-style: none; }
+  .nav-menu > li > a { display: flex; align-items: center; gap: 5px; padding: 10px 14px; font-size: 14px; font-weight: 500; color: var(--text); border-radius: 6px; transition: all 0.2s; }
+  .nav-menu > li > a:hover, .nav-menu > li > a.active { color: var(--green-mid); background: var(--green-pale); }
+  .nav-cta { background: var(--green-mid) !important; color: white !important; padding: 9px 20px !important; border-radius: 6px !important; }
+  .nav-cta:hover { background: var(--green-dark) !important; }
+  .post-hero { position: relative; height: 480px; overflow: hidden; }
+  .post-hero img { width: 100%; height: 100%; object-fit: cover; }
+  .post-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.6) 100%); display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 48px 24px; text-align: center; color: white; }
+  .post-hero-overlay .breadcrumb { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 14px; }
+  .post-hero-overlay .breadcrumb a { color: var(--gold-light); }
+  .post-hero-overlay h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 5vw, 52px); font-weight: 700; line-height: 1.2; max-width: 800px; }
+  .post-hero-overlay .post-meta { margin-top: 14px; font-size: 13.5px; color: rgba(255,255,255,0.65); display: flex; gap: 20px; }
+  .post-wrap { max-width: 800px; margin: 0 auto; padding: 64px 24px 80px; }
+  .post-lead { font-size: 18px; line-height: 1.8; color: var(--text-muted); margin-bottom: 40px; border-left: 4px solid var(--green-light); padding-left: 20px; }
+  .post-wrap h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: var(--green-dark); margin: 40px 0 14px; }
+  .post-wrap p { font-size: 15.5px; line-height: 1.85; color: var(--text-muted); margin-bottom: 18px; }
+  .post-wrap ul { padding-left: 22px; margin-bottom: 18px; }
+  .post-wrap ul li { font-size: 15.5px; line-height: 1.85; color: var(--text-muted); margin-bottom: 8px; }
+  .post-img { width: 100%; border-radius: 12px; margin: 32px 0; object-fit: cover; max-height: 420px; }
+  .fact-box { background: var(--green-pale); border-radius: 12px; padding: 24px 28px; margin: 32px 0; }
+  .fact-box h4 { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--green-dark); margin-bottom: 14px; }
+  .fact-row { display: flex; gap: 12px; margin-bottom: 8px; font-size: 14.5px; }
+  .fact-label { font-weight: 600; color: var(--green-mid); min-width: 140px; }
+  .fact-val { color: var(--text); }
+  .cta-box { background: var(--green-dark); color: white; border-radius: 14px; padding: 36px; text-align: center; margin-top: 56px; }
+  .cta-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; margin-bottom: 12px; }
+  .cta-box p { font-size: 15px; color: rgba(255,255,255,0.75); margin-bottom: 24px; }
+  .btn-gold { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--green-dark); padding: 13px 28px; border-radius: 4px; font-weight: 600; font-size: 14px; transition: all 0.2s; }
+  .btn-gold:hover { background: var(--gold-light); }
+  .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--green-mid); font-size: 14px; font-weight: 500; margin-bottom: 40px; }
+  .back-link:hover { color: var(--green-dark); }
+  footer { background: #0e2218; color: rgba(255,255,255,0.65); padding: 56px 24px 0; }
+  .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: white; margin-bottom: 14px; }
+  .footer-logo span { color: var(--green-light); }
+  .footer-desc { font-size: 13.5px; line-height: 1.75; margin-bottom: 22px; }
+  .social-links { display: flex; gap: 10px; }
+  .social-link { width: 36px; height: 36px; background: rgba(255,255,255,0.07); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.65); font-size: 13px; transition: all 0.2s; border: 1px solid rgba(255,255,255,0.1); font-weight: 700; }
+  .social-link:hover { background: var(--green-mid); color: white; }
+  .footer-col h4 { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 18px; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a { font-size: 13.5px; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--green-light); }
+  .contact-item { display: flex; gap: 10px; margin-bottom: 14px; font-size: 13.5px; }
+  .contact-item a { color: rgba(255,255,255,0.6); transition: color 0.2s; }
+  .footer-bottom { max-width: 1200px; margin: 0 auto; padding: 20px 0; display: flex; justify-content: space-between; font-size: 12.5px; color: rgba(255,255,255,0.3); flex-wrap: wrap; gap: 10px; }
+  @media(max-width:900px){ .footer-grid { grid-template-columns: 1fr 1fr; } .nav-menu { display: none; } }
+  @media(max-width:600px){ .footer-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span class="tbi">&#128205; <a href="contact.html">Bangkok, Thailand</a></span>
+      <span class="tbi">&#9993; <a href="mailto:monai.suriya@gmail.com">monai.suriya@gmail.com</a></span>
+    </div>
+    <div class="topbar-right">
+      <span class="tbi">&#128222; <a href="tel:+66954403465">+66-954403465</a></span>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="images/index/logo.svg" alt="Thai Terra Gardens" style="height:50px;">
+    </a>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Company</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="order-process.html">Order Process</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <button class="ham-btn" id="hamBtn" onclick="toggleMob()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <img src="images/blog/blog-goldenshower.jpg" alt="Golden Shower Tree">
+  <div class="post-hero-overlay">
+    <div class="breadcrumb"><a href="index.html">Home</a> / <a href="blog.html">Blog</a> / Golden Shower Tree</div>
+    <h1>Golden Shower Tree — Thailand's National Flower</h1>
+    <div class="post-meta"><span>Plant Guide</span><span>January 2026</span><span>By Thai Terra Gardens</span></div>
+  </div>
+</div>
+
+<div class="post-wrap">
+  <a href="blog.html" class="back-link">&#8592; Back to Blog</a>
+
+  <p class="post-lead">
+    When the Golden Shower Tree blooms, it transforms the entire landscape around it. Cascading racemes of brilliant yellow flowers drape from every branch, creating a curtain of gold that is impossible to ignore. It is Thailand's national flower — and one of the most spectacular ornamental trees in the world.
+  </p>
+
+  <div class="fact-box">
+    <h4>Quick Facts</h4>
+    <div class="fact-row"><span class="fact-label">Botanical Name</span><span class="fact-val">Cassia fistula</span></div>
+    <div class="fact-row"><span class="fact-label">Common Name</span><span class="fact-val">Golden Shower Tree, Indian Laburnum, Ton Khun (Thai)</span></div>
+    <div class="fact-row"><span class="fact-label">Family</span><span class="fact-val">Fabaceae (Leguminosae)</span></div>
+    <div class="fact-row"><span class="fact-label">Origin</span><span class="fact-val">Indian subcontinent; naturalised across Southeast Asia</span></div>
+    <div class="fact-row"><span class="fact-label">Height</span><span class="fact-val">10 – 20 metres at maturity</span></div>
+    <div class="fact-row"><span class="fact-label">Bloom Season</span><span class="fact-val">March – June (peak: April–May in Thailand)</span></div>
+    <div class="fact-row"><span class="fact-label">National Symbol</span><span class="fact-val">National flower of Thailand; also Sri Lanka's national tree</span></div>
+  </div>
+
+  <h2>A Tree of Cultural Significance</h2>
+  <p>
+    In Thailand, Cassia fistula — locally known as "Ton Khun" or "Ratchaphruek" — is far more than just a beautiful tree. It is the national flower of Thailand, deeply embedded in cultural and religious life. The golden colour of its blooms symbolises the monarchy and the spirit of the Thai nation. Every April during the Songkran festival, Thai streets lined with blooming Golden Shower Trees create breathtaking corridors of gold.
+  </p>
+  <p>
+    The tree is also sacred in Hindu and Buddhist traditions. In India, it is associated with the sun god Surya, and in Ayurvedic medicine, various parts of the tree — bark, leaves, pods, and roots — have been used for their medicinal properties for centuries.
+  </p>
+
+  <img src="images/blog/blog-goldenshower-2.jpg" alt="Golden Shower Tree in bloom" class="post-img">
+
+  <h2>The Blooming Spectacle</h2>
+  <p>
+    What makes the Golden Shower Tree so remarkable is the drama of its flowering. The tree is semi-deciduous — it sheds most of its leaves just before flowering, which means that when the blooms emerge, they are displayed against bare branches with virtually nothing to compete with them. Long, pendulous racemes of bright yellow flowers can reach 30–40cm in length, hanging down in dense clusters that give the tree its "golden shower" name.
+  </p>
+  <p>
+    A fully mature Golden Shower Tree in peak bloom is one of the most photographed trees in Asia. It makes an extraordinary focal point for parks, roadsides, hotel entrances, corporate campuses, and estate gardens. The spectacle typically lasts 2–4 weeks and is followed by the emergence of fresh new green foliage.
+  </p>
+
+  <img src="images/blog/blog-goldenshower-3.jpg" alt="Cassia fistula flowers" class="post-img">
+
+  <h2>Growing Conditions</h2>
+  <p>
+    Cassia fistula is a robust and adaptable tree, well-suited to tropical and subtropical climates. Once established, it is fairly drought-tolerant and requires minimal intervention. In its preferred climate, it grows rapidly and begins blooming within 3–5 years from planting.
+  </p>
+  <ul>
+    <li><strong>Sunlight:</strong> Full sun; produces poor flowering in shade</li>
+    <li><strong>Soil:</strong> Adaptable; tolerates clay, loam, and sandy soils with reasonable drainage</li>
+    <li><strong>Water:</strong> Moderate; drought-tolerant once established; do not waterlog</li>
+    <li><strong>Temperature:</strong> Tropical to subtropical; sensitive to prolonged frost</li>
+    <li><strong>Growth Rate:</strong> Fast (1–1.5m per year in good conditions)</li>
+    <li><strong>Pruning:</strong> Light shaping after flowering to maintain form; avoid heavy cutting</li>
+  </ul>
+
+  <h2>Landscape Applications</h2>
+  <p>
+    The Golden Shower Tree is highly versatile in landscape design. Its moderate size (typically 10–15m in cultivation), rounded crown, and spectacular flowering make it suitable for:
+  </p>
+  <ul>
+    <li>Avenue and boulevard planting — creates spectacular "golden tunnel" effect</li>
+    <li>Hotel and resort entrance plantings</li>
+    <li>Public parks and botanical gardens</li>
+    <li>Private estate gardens as specimen trees</li>
+    <li>Urban streetscaping in tropical cities</li>
+    <li>Golf course landscaping</li>
+  </ul>
+
+  <h2>Export from Thailand</h2>
+  <p>
+    Thailand is among the world's best sources for Golden Shower Trees, with nurseries across the central plains and northeast producing healthy, well-established specimens in a range of sizes. Thai Terra Gardens can supply plants from small nursery-grade stock to large semi-mature specimens with significant trunk diameter, depending on project requirements and budget.
+  </p>
+  <p>
+    All export trees are prepared to phytosanitary standards and shipped with appropriate documentation for the destination country. We advise on optimal planting time, establishment care, and after-sales support for international clients.
+  </p>
+
+  <div class="cta-box">
+    <h3>Add the Golden Shower Tree to Your Project</h3>
+    <p>Contact our team to discuss specimen availability, sizing, and international export arrangements.</p>
+    <a href="contact.html" class="btn-gold">Get in Touch &#8594;</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Thai Terra <span>Gardens</span></div>
+      <p class="footer-desc">A Thai company for exporting plants with more than 11 years of experience. Established nurseries and local partnerships make us the best plant exporter in Thailand.</p>
+      <div class="social-links">
+        <a href="https://api.whatsapp.com/send/?phone=66954403465" class="social-link" target="_blank">wa</a>
+        <a href="https://www.linkedin.com/in/monai-suriya/" class="social-link" target="_blank">in</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="mission.html">Mission &amp; Vision</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="products.html#cat1">Ornamental Flowering Trees</a></li>
+        <li><a href="products.html#cat2">Shade &amp; Architectural Trees</a></li>
+        <li><a href="products.html#cat3">Palms &amp; Structural Plants</a></li>
+        <li><a href="products.html#cat5">Super Luxury &amp; Special</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="contact-item">&#128222; <a href="tel:+66954403465">+66-954403465</a></div>
+      <div class="contact-item">&#9993; <a href="mailto:monai.suriya@gmail.com">monai.suriya@gmail.com</a></div>
+      <div class="contact-item">&#128205; Kaeng Khoi District, Saraburi 18110, Thailand</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&#169; 2024 Thai Terra Gardens Co., Ltd. All rights reserved.</span>
+    <span>Plant Exporters in Thailand</span>
+  </div>
+</footer>
+
+
+<div class="mobile-menu" id="mobMenu">
+  <div class="mobile-overlay" onclick="closeMob()"></div>
+  <div class="mobile-panel">
+    <button class="mob-close" onclick="closeMob()">&#x2715;</button>
+    <div class="mob-section">Menu</div>
+    <a href="index.html" class="mob-link">Home</a>
+    <div class="mob-section">Company</div>
+    <a href="about.html" class="mob-sub">About Us</a>
+    <a href="mission.html" class="mob-sub">Mission &amp; Vision</a>
+    <div class="mob-section">Products</div>
+    <a href="products.html" class="mob-sub">All Products</a>
+    <a href="products.html#cat1" class="mob-sub">Ornamental Flowering Trees</a>
+    <a href="products.html#cat2" class="mob-sub">Shade &amp; Architectural Trees</a>
+    <a href="products.html#cat3" class="mob-sub">Palms &amp; Structural Plants</a>
+    <a href="products.html#cat4" class="mob-sub">Screening &amp; Privacy</a>
+    <a href="products.html#cat5" class="mob-sub">Super Luxury &amp; Special</a>
+    <div class="mob-section">More</div>
+    <a href="order-process.html" class="mob-link">Order Process</a>
+    <a href="blog.html" class="mob-link">Blog</a>
+    <a href="gallery.html" class="mob-link">Gallery</a>
+    <a href="contact.html" class="mob-link mob-cta">Contact Us</a>
+  </div>
+</div>
+<script>
+function toggleMob(){var m=document.getElementById('mobMenu'),b=document.getElementById('hamBtn');m.classList.toggle('open');b.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':'';}
+function closeMob(){document.getElementById('mobMenu').classList.remove('open');document.getElementById('hamBtn').classList.remove('open');document.body.style.overflow='';}
+</script>
+</body>
+</html>
